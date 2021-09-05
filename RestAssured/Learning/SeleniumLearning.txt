@@ -1,0 +1,5 @@
+http://toolsqa.com/selenium-webdriver/choosing-effective-xpath/
+
+http://seleniumhq.github.io/selenium/docs/api/java/index.html
+
+http://seleniumtwo-by-arun.blogspot.in/2013/06/64-wild-cards-usage-in-xpath.html

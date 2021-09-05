@@ -1,0 +1,335 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>SAMPLE_MAVEN</groupId>
+  <artifactId>SAMPLE_MAVEN</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>SAMPLE_MAVEN</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+              <cucumber.version>1.2.5</cucumber.version>
+              <fest-assert.version>2.0M10</fest-assert.version>
+              <slf4j.version>1.7.7</slf4j.version>
+              <selenium-java.version>2.43.1</selenium-java.version>
+              <restAssuredVersion>3.0.0</restAssuredVersion>
+<!--           <parallel-count>3</parallel-count> -->
+              <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+              <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+            <!--  <testtorun>**/*Runner.class</testtorun> -->
+              <testtorun>REST_Assured.class</testtorun>
+              <ist1>URL</ist1>
+              <ist2>URL1</ist2>
+       </properties>
+       
+       <dependencies>
+                <dependency>
+                     <groupId>org.seleniumhq.selenium</groupId>
+                     <artifactId>selenium-java</artifactId>
+                     <version>${selenium-java.version}</version>
+              </dependency>
+             <dependency>
+				  <groupId>com.codoid.products</groupId>
+				  <artifactId>fillo</artifactId>
+				  <version>1.18</version>
+			</dependency>
+            <dependency>
+	            <groupId>xml-apis</groupId>
+	            <artifactId>xml-apis</artifactId>
+	            <version>1.4.01</version>
+        	</dependency>
+            
+              <dependency>
+                     <groupId>info.cukes</groupId>
+                     <artifactId>cucumber-java</artifactId>
+                     <version>1.2.5</version>
+                     <scope>test</scope>
+              </dependency>
+              <dependency>
+                     <groupId>info.cukes</groupId>
+                     <artifactId>cucumber-junit</artifactId>
+                     <version>1.2.5</version>
+                     <scope>test</scope>
+              </dependency>
+              <dependency>
+                     <groupId>info.cukes</groupId>
+                     <artifactId>cucumber-testng</artifactId>
+                     <version>1.2.5</version>
+                     <scope>test</scope>
+              </dependency>
+              <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+				<dependency>
+				    <groupId>org.testng</groupId>
+				    <artifactId>testng</artifactId>
+				    <version>6.14.3</version>
+				    <scope>test</scope>
+				</dependency>
+              
+        <dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+		
+        
+              <dependency>
+                     <groupId>junit</groupId>
+                     <artifactId>junit</artifactId>
+                     <version>4.12</version>
+                     <scope>test</scope>
+              </dependency>
+            
+              <dependency>
+                     <groupId>org.apache.maven.surefire</groupId>
+                     <artifactId>surefire-junit47</artifactId>
+                     <version>2.19.1</version>
+              </dependency>
+
+              
+               <dependency>
+              <groupId>net.masterthought</groupId>
+			  <artifactId>maven-cucumber-reporting</artifactId>
+			 <version>3.0.0</version>
+			  </dependency>
+               <dependency>
+			
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.10.0</version>
+              </dependency>
+              <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.10.0</version>
+            </dependency>
+            <dependency>
+             <groupId>io.rest-assured</groupId>
+		      <artifactId>rest-assured</artifactId>
+		      <version>${restAssuredVersion}</version>
+		      <!-- scope>test</scope-->
+			</dependency>
+            <dependency>
+	            <groupId>io.rest-assured</groupId>
+	            <artifactId>json-path</artifactId>
+	            <version>${restAssuredVersion}</version>
+             </dependency>
+         	<dependency>
+		      <groupId>io.rest-assured</groupId>
+		      <artifactId>xml-path</artifactId>
+		      <version>${restAssuredVersion}</version>
+			</dependency>
+			<dependency>
+		      <groupId>io.rest-assured</groupId>
+		      <artifactId>json-schema-validator</artifactId>
+		      <version>${restAssuredVersion}</version>
+		       <!-- scope>test</scope-->
+			</dependency>
+			<dependency>
+		<groupId>org.hamcrest</groupId>
+			<artifactId>java-hamcrest</artifactId>
+			<version>2.0.0.0</version>
+		</dependency>
+            <!-- <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.5</version>
+             </dependency>  
+			 <dependency>
+            <groupId>com.ibm.db2</groupId>
+            <artifactId>db2jcc4</artifactId>
+            <version>9.7.5</version>
+            </dependency>
+             
+            <dependency>
+            <groupId>com.ibm.db2</groupId>
+            <artifactId>db2jcc_license_cisuz</artifactId>
+            <version>9.7fp5</version>
+              </dependency>-->
+              <!-- -Splunk -->
+            <!--  <dependency>
+            <groupId>com.splunk</groupId>
+            <artifactId>splunk</artifactId>
+            <version>1.5.0.0</version>
+              </dependency> 
+              -ResultReaderJson 
+              <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+             </dependency> -->
+            <!-- BMW --> 
+              <dependency>
+                     <groupId>log4j</groupId>
+                     <artifactId>log4j</artifactId>
+                     <version>1.2.12</version>
+              </dependency>
+              <dependency>
+       <groupId>org.apache.poi</groupId>
+       <artifactId>poi</artifactId>
+       <version>3.10-FINAL</version>
+       </dependency>
+       <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>3.10-FINAL</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+<dependency>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>2.0.1</version>
+</dependency>
+<!-- <dependency>
+    <groupId>org.bouncycastle</groupId>
+    <artifactId>bcprov-jdk15on</artifactId>
+    <version>1.49</version>
+    <type>jar</type>
+    <scope>compile</scope>
+    <optional>true</optional>
+</dependency> -->
+</dependencies>
+  
+   <!-- <profiles>
+		<profile>
+			<id>QA</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/test/resources/Environments/QA</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+		<id>ist1</id>
+		<properties>
+		<wsdl.location>${ist1}/rest-service-account/retApiAccount?wsdl</wsdl.location>
+		<res.dir>src/test/resources/ist</res.dir>
+		</properties>
+		</profile>
+		<profile>
+			<id>Perf</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/test/resources/Environments/Perf</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		</profiles>
+   -->
+  
+      <build>
+       <testResources>
+       <testResource>
+       <directory>{res.dir}</directory>
+       </testResource>
+       </testResources>
+       <plugins>
+         <plugin>
+        	<groupId>org.apache.maven.plugins</groupId>	 
+		      <artifactId>maven-compiler-plugin</artifactId>
+               <version>3.1</version>
+                 <configuration>
+                   <source>1.8</source>
+                 	<target>1.8</target>
+                 	<fork>true</fork>
+                 <executable>c:\Program Files (x86)\Java\jdk1.8.0_151\bin\javac</executable>
+                 </configuration>
+            </plugin>
+			<plugin>
+    <groupId>com.github.temyers</groupId>
+    <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+    <version>1.0.1</version>
+    <executions>
+        <execution>
+            <id>generateRunners</id>
+            <phase>validate</phase>
+            <goals>
+                <goal>generateRunners</goal>
+            </goals>
+            <configuration>
+                <glue>com.sample_MAVEN.Pages,com.sample_MAVEN.StepDefinitions</glue>
+                <featuresDirectory>Resources/Features</featuresDirectory>
+                <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+                <format>json,html</format>
+                <tags>"~@ignored"</tags>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+            <!-- <plugin>
+        	<groupId>org.codehaus.mojo</groupId>	 
+		      <artifactId>jaxws-maven-plugin</artifactId>
+               <version>1.12</version>
+                 <configuration>
+                   <wsdlUrls>
+                   <wsdlLocation>${wsdl.location}</wsdlLocation>
+                   </wsdlUrls>
+                   <keep>true</keep>
+                   <sourceDesDir>target/generated/src/main/java</sourceDesDir>
+                 </configuration>
+                 <executions>
+                 <execution>
+                 <goals>
+                  <goal>wsimport</goal>
+                  </goals>
+                  </execution>
+                  </executions>
+                  </plugin>   -->
+                
+                  <plugin>
+                           <groupId>org.apache.maven.plugins</groupId>
+                           <artifactId>maven-surefire-plugin</artifactId>
+                           <version>2.19.1</version>
+                           <executions>
+                                  <execution>
+                                         <goals>
+                                                <goal>test</goal>
+                                         </goals>
+                                         </execution>
+                  				</executions>
+                                         <configuration>
+                                                <parallel>classes</parallel>
+                                                <forkCount>10</forkCount>
+                                                <reuseForks>false</reuseForks>
+                                                <threadCount>10</threadCount>
+                                                <includes>
+                                                       <include>${testtorun}</include>
+                                                </includes>
+                                         </configuration>
+     
+                     </plugin>
+                      <plugin>
+							<groupId>net.masterthought</groupId>
+							<artifactId>maven-cucumber-reporting</artifactId>
+							<version>3.0.0</version>
+							<executions>
+							<execution>
+							<id>execution</id>
+							<phase>test</phase>
+							<goals>
+							<goal>generate</goal>
+							</goals>
+							<configuration>
+							<projectName>WSimport</projectName>
+							<outputDirectory>target/cucumber-reports</outputDirectory>
+							<cucumberOutput>target/cucumber-detailed-reports/json/Temp.json</cucumberOutput>
+							<!-- <jsonfiles>
+							<param>target/openandfund.json</param>
+							</jsonfiles> -->
+							<parallelTesting>false</parallelTesting>
+							</configuration>
+							</execution>
+							</executions>
+							</plugin>
+              </plugins>
+       </build>
+</project>
+
+

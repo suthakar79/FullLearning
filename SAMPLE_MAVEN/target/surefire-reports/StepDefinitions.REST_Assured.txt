@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: StepDefinitions.REST_Assured
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.072 sec - in StepDefinitions.REST_Assured

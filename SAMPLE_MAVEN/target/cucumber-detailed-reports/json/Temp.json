@@ -1,0 +1,79 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "Verify the Get Operation of the API",
+        "description": "",
+        "id": "verify-all-the-opearation-of-the-api;verify-the-get-operation-of-the-api",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "I want to perform Get ops for the ApI",
+            "match": {
+              "location": "REST_Assured.i_want_to_perform_Get_ops_for_the_ApI()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "I get value for the address \"https://localhost:3000/address\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://localhost:3000/address",
+                  "offset": 29
+                }
+              ],
+              "location": "REST_Assured.i_get_value_for_the_address(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "I validate the address has \"plano\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "plano",
+                  "offset": 28
+                }
+              ],
+              "location": "REST_Assured.i_validate_the_address_has(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@Get"
+          }
+        ]
+      }
+    ],
+    "name": "Verify all the opearation of the API",
+    "description": "",
+    "id": "verify-all-the-opearation-of-the-api",
+    "keyword": "Feature",
+    "uri": "Resources/Features/RestAssuredAPI.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@REST_Assured"
+      }
+    ]
+  }
+]

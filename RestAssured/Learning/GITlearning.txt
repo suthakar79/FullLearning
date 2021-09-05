@@ -1,0 +1,58 @@
+
+https://happygitwithr.com/
+
+word document available under destop\learning folder 
+
+Diff b/w GIT Rebase and Git Merge
+
+Both commands are used to merge the branch but the main difference is that Merge preserves commit history and whereas Rebase does not maintain commit history .
+https://www.quora.com/What-is-the-difference-between-rebase-and-merge-in-Git
+example
+
+diff b/w GIT PULL and GIT fetch
+
+
+
+https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git
+
+C:\Users\suthakar79\workspace\TestProtractor\node_modules\protractor\node_modules\webdriver-manager\selenium
+
+GIT Video : https://www.youtube.com/watch?v=xqwoTHL6CJ0&list=PLH1ul2iNXl7vkfIFF2BxLA5xpkbvWtFWf
+
+To discard changes from working directory for particular file 
+
+git checkout one.sh 
+to discard all the chnages from working dirrectory 
+git checkout .
+
+To remove file from staging area after adding file using git add commands
+git reset head <filename> - to move file into working area
+git reset hard * - to move all the file in staging area to working area
+
+To remove file from local commit 
+git reset --mixed|soft|hard HEAD~n
+mixed - default mode and it moved file from local commit area to working Area.
+soft- it moved file from local commit to Staging(indexing area)
+hard - it removed file from local commit and does NOT KEPT file in working or Staging Area.
+~n - no of commit to be moved or removed for ex ~3 - last 3 commit will be moved/removed .However we can move/remove specific commit using this Git revert option.
+this command also removed commit history from log 
+
+To remove file from Remote Repo ( after git push origin master) 
+git revert <commitID> ( you can get from git log --online)
+
+Revert will do remove files done by commit(<commitID>) and create another commit .so history shows all the commit but files also removed from remote repo as well.
+
+to view logs
+git logs - shows all the commit history detailed info
+git logs --oneline - shows commit in single Line
+
+
+Diff between fork and clone
+In a nutshell, Forking is perhaps the same as "cloning under your GitHub ID/profile". A fork is anytime better than a clone, with a few exceptions, obviously. The forked repository is always being monitored/compared with the original repository unlike a cloned repository.
+
+Branching:
+
+create branch : git branch <branchName>
+delecte brancg : git branch -d task_branch  note : you shd not be in rask_branch and you shd in other branch (master) 
+force delete : if you have file not commited to that branch , you can use 
+git branch -D branch

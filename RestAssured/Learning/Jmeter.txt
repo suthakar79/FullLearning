@@ -1,0 +1,22 @@
+Houston
+
+Hotel Address
+
+
+finding parking near the place
+
+https://en.parkopedia.com/parking/attraction/downtown-aquarium-houston/?arriving=201712170830&leaving=201712171030
+
+
+
+Jmeter
+software testing help Jmeter
+https://www.youtube.com/watch?v=_YEBsgqPXmw&list=PLCYqwbyDA33R5p7f0oBcQ7DdYOG16x5KL&index=10
+
+official documentation for Jmeter
+jmeter.acpache.org/usermanaul/component_reference.html
+Recording Script in Jmeter 
+
+in if controller you can use condition as Javasript
+
+${__javaScript(vars.get('LeadNumber')!=null,))}

@@ -1,0 +1,44 @@
+Loan depot
+We are at the forefront of change in this rapidly evolving lending market. mello™, the Greek word for “future,” was the product of a recent $80+ million dollar investment in research & development to transform & streamline the home buying process into a digital experience like no other competitor offers.  But mello™ is just the beginning… loanDepot will continue to invest in developing our own advanced technology ecosystem built around serving our customers & enabling our valued employees to provide exceptional service. We have funding, we have opportunities, you have ideas—it’s a perfect match. Come join us!
+
+loanDepot — We are America’s Lender.
+
+Position Summary:
+
+As our Software Engineer in Test, you will be responsible for delivering best in class mortgage software solutions. Responsible for Manual testing and maintaining automation test suite. Adding new automation tests as necessary; translating requirements and/or specifications into automation test cases. Executes automation tests, analyzes test results, report findings, and debugs automation tool or script failures.  The candidates will follow best coding practices and methods identified by the team.
+
+What You Will Be Doing:
+
+Create and Run Tests: Translates requirements into functional and technical test cases and implements them for thorough test coverage.
+Create Integration Tests: Creates manual and automation tests which ensure application functionality, including up- and down-stream interfaces.
+Build Frameworks:Uses testing frameworks to ensure quality software solutions. Provides feedback on how frameworks can be improved or extended.
+Test Automation:Builds automated tests. Familiarity with frameworks and/or tools such as Robot, Cucumber, SoapUI, etc.
+Analysis and Troubleshooting:Analyzes test case failures to identify points of failure in complex product features and capabilities. Identifies and addresses relevant edge-case scenarios to ensure each is handled properly.
+Collaborate:Assists other technical teams in troubleshooting complex technical or end-user scenarios.
+Best Practices:Adheres to coding and testing standards. Follows established best practices.
+What You Need To Have To Be Successful:
+
+Relevant Languages/Technologies:5-6 years work experience with C#, Selenium, NUnit, Jasmine, Protractor, JavaScript, Postman, Swagger etc.
+Database:Ability to execute queries to analyze data.-NO SQL Like cassendra,Oracle DB
+Source Control: Experienced with one or more source/version control systems. Understanding of branching strategies and merging.
+Tools:Knowledge with Visual Studio, TFS, JIRA, MTM and Confluence is preferred.
+WEBSERVICES AND API: intermediate understanding of Webservices, knows most common APIs from memory.
+Code Quality:Has all code and designs reviewed by peers and makes necessary adjustments. Advises peers for their code reviews. Advises on coding standards.
+Communication:Articulate written and verbal, comfortable leading a discussion at a whiteboard and attending meetings with a mixed composition.
+Document Solutions:Clearly documents solutions by following established templates. Improves existing templates and creates new templates as needed.
+Nice To Have:
+
+Education:S. in Computer Science or Software Engineering or equivalent experience preferred.
+Domain Experience:Understanding of financial terms and concepts is preferred. Some knowledge of mortgage specific terminology, concepts and systems is preferred.
+The Perks:
+
+Competitive compensation reliant on ability & experience.
+Excellent benefits package including multiple health, dental & vision options.
+Company paid life and AD&D Insurance, as well as additional voluntary benefit possibilities.
+401K with robust company match.
+The opportunity to work for America’s Lender under the vision of industry legend, Anthony Hsieh.
+We are an equal opportunity employer and value diversity in our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.
+
+Skip to search results
+CareerOne
+Copyright © 2019 | Monster Worldwide U.S. Patents No. 7,599,930 B1; 7,827,125 and 7,836,060 

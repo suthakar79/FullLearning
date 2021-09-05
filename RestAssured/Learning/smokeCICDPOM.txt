@@ -1,0 +1,395 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.capitalone</groupId>
+  <artifactId>Satrun-UI</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Satrun-UI</name>
+<!--   <url>http://maven.apache.org</url> -->
+<properties>
+              <cucumber.version>1.1.8</cucumber.version>
+              <fest-assert.version>2.0M10</fest-assert.version>
+              <slf4j.version>1.7.7</slf4j.version>
+              <selenium-java.version>2.43.1</selenium-java.version>
+<!--               <parallel-count>3</parallel-count> -->
+              <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+              <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+       </properties>
+       
+       <dependencies>
+              <dependency>
+                     <groupId>org.slf4j</groupId>
+                     <artifactId>slf4j-api</artifactId>
+                     <version>${slf4j.version}</version>
+              </dependency>
+             <!--   SaturnAgent Activity Dependency -->
+              <dependency>
+			  <groupId>com.capitalone.saturn.agentActivity</groupId>
+			  <artifactId>saturn-agentActivity</artifactId>
+			  <version>01.00.00.17</version>
+			</dependency>			
+              <dependency>
+			<groupId>oracle</groupId>
+            <artifactId>oracle</artifactId>
+            <version>10.2.0.3</version>
+            <!--
+             <scope>test</scope>
+             -->
+        </dependency>		
+		<!-- MSSQL database Driver -->
+        <dependency>
+            <groupId>ms</groupId>
+            <artifactId>mssqlserver-jdbc4</artifactId>
+            <version>2.0</version>
+        </dependency>
+              <dependency>
+                     <groupId>net.sf.json-lib</groupId>
+                     <artifactId>json-lib</artifactId>
+                     <version>2.4</version>
+                     <type>pom</type>
+              </dependency>
+              <dependency>
+                     <groupId>org.slf4j</groupId>
+                     <artifactId>slf4j-log4j12</artifactId>
+                     <version>${slf4j.version}</version>
+              </dependency>
+              <dependency>
+                     <groupId>org.easytesting</groupId>
+                     <artifactId>fest-assert-core</artifactId>
+                     <version>${fest-assert.version}</version>
+              </dependency>
+              
+			<!--   <dependency>
+			  <groupId>org.testng</groupId>
+			  <artifactId>testng</artifactId>
+			  <version>6.8</version>
+			</dependency> -->
+			
+			
+              <dependency>
+                     <groupId>org.seleniumhq.selenium</groupId>
+                     <artifactId>selenium-java</artifactId>
+                     <version>${selenium-java.version}</version>
+              </dependency>
+             <!-- <dependency>
+			  <groupId>org.seleniumhq.selenium</groupId>
+			  <artifactId>selenium-chrome-driver</artifactId>
+			  <version>2.46.0</version>
+		</dependency>
+		<dependency>
+			  <groupId>commons-logging</groupId>
+			  <artifactId>commons-logging</artifactId>
+			  <version>1.1.1</version>
+		</dependency> -->
+              <dependency>
+                     <groupId>info.cukes</groupId>
+                     <artifactId>cucumber-java</artifactId>
+<!--                      <version>${cucumber.version}</version> -->
+                     <version>1.1.8</version>
+                     <scope>test</scope>
+              </dependency>
+              
+        <dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+		
+              <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>2.6.3</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.6.3</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-joda</artifactId>
+        <version>2.6.3</version>
+    </dependency>
+    <dependency>
+    <groupId>joda-time</groupId>
+    <artifactId>joda-time</artifactId>
+    <version>2.4</version>
+</dependency>
+
+              <dependency>
+                     <groupId>junit</groupId>
+                     <artifactId>junit</artifactId>
+                     <version>4.11</version>
+                     <scope>test</scope>
+              </dependency>
+              <!-- <dependency>
+                     <groupId>org.testng</groupId>
+                     <artifactId>testng</artifactId>
+                     <version>6.8.8</version>
+                     <scope>test</scope>
+              </dependency> -->
+              <dependency>
+                     <groupId>info.cukes</groupId>
+                     <artifactId>cucumber-junit</artifactId>
+                     <version>${cucumber.version}</version>
+                     <scope>test</scope>
+              </dependency>
+              
+       
+              <dependency>
+                     <groupId>org.apache.maven.surefire</groupId>
+                     <artifactId>surefire-junit47</artifactId>
+                     <version>2.19.1</version>
+              </dependency>
+
+              <dependency>
+                     <groupId>info.cukes</groupId>
+                     <artifactId>cucumber-picocontainer</artifactId>
+                     <version>${cucumber.version}</version>
+              </dependency>
+              
+			  	<!-- <dependency>
+					<groupId>info.cukes</groupId>
+					<artifactId>cucumber-testng</artifactId>
+					<version>${cucumber.version}</version>
+				</dependency> -->
+              <dependency>
+                     <groupId>info.cukes</groupId>
+                     <artifactId>cucumber-core</artifactId>
+                     <version>${cucumber.version}</version>
+              </dependency>
+               <dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>2.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>xml-path</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+              <dependency>
+
+			<groupId>org.dom4j</groupId>
+
+			<artifactId>dom4j</artifactId>
+
+			<version>2.0.0-RC1</version>
+
+		</dependency>
+
+              <dependency>
+                     <groupId>log4j</groupId>
+                     <artifactId>log4j</artifactId>
+                     <version>1.2.12</version>
+              </dependency>
+              <dependency>
+       <groupId>org.apache.poi</groupId>
+       <artifactId>poi</artifactId>
+       <version>3.10-FINAL</version>
+       </dependency>
+       <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>3.10-FINAL</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+<dependency>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>2.0.1</version>
+</dependency>
+<dependency>
+    <groupId>org.bouncycastle</groupId>
+    <artifactId>bcprov-jdk15on</artifactId>
+    <version>1.49</version>
+    <type>jar</type>
+    <scope>compile</scope>
+    <optional>true</optional>
+</dependency>
+       
+       <dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-core</artifactId>
+			<version>3.0.0</version>
+			
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.11</artifactId>
+			<version>0.8.2.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>0.8.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.capitalone.homeloansservicing</groupId>
+			<artifactId>cohl-imaging</artifactId>
+				<version>0.0.13</version>
+			<classifier>tests</classifier>
+		</dependency>		
+	<!-- 	<dependency>
+      <groupId>org.apache.maven.surefire</groupId>
+      <artifactId>surefire-testng</artifactId>
+      <version>2.14</version>
+    </dependency> -->
+                
+                     </dependencies>
+       <!-- <build>
+              <plugins>
+                     Maven 
+ plug-in
+                     <plugin>
+                           <artifactId>maven-compiler-plugin</artifactId>
+                           <version>3.1</version>
+                           <configuration>
+                                  <source>1.7</source>
+                                  <target>1.7</target>
+                           </configuration>
+                     </plugin>
+
+                     integration testing dependencies
+
+
+                     <plugin>
+                           <groupId>org.apache.maven.plugins</groupId>
+                           <artifactId>maven-failsafe-plugin</artifactId>
+                           <version>2.17</version>
+                           <executions>
+                                  <execution>
+                                         <id>acceptance-test</id>
+                                         <phase>integration-test</phase>
+                                         <goals>
+                                                <goal>integration-test</goal>
+                                         </goals>
+                                         <configuration>
+                                                <suiteXmlFiles>
+                                                       <suiteXmlFile>src/test/java/TestNGtest.xml</suiteXmlFile>
+                                                </suiteXmlFiles>
+                                                <parallel>classes</parallel>
+                                                <forkCount>10</forkCount>
+                                                <reuseForks>false</reuseForks>
+                                                <threadCount>10</threadCount>
+                                                <includes>
+                                                       <include>**/*HorizonTest.class</include>
+                                                </includes>
+                                         </configuration>
+                                  </execution>
+                            </executions>
+                     </plugin>
+              </plugins>
+       </build>
+</project>
+-->
+
+
+<build>
+              <plugins>
+                     <!-- Maven Compiler plug-in -->
+                     <plugin>
+                           <artifactId>maven-compiler-plugin</artifactId>
+                           <version>3.1</version>
+                           <configuration>
+                                  <source>1.8</source>
+                                  <target>1.8</target>
+                           </configuration>
+                     </plugin>
+                     <plugin>
+                           <groupId>org.apache.maven.plugins</groupId>
+                           <artifactId>maven-surefire-plugin</artifactId>
+                           <version>2.19.1</version>
+
+                                         <configuration>
+<!--                                          		<forkCount>${surefire.fork.count}</forkCount> -->
+												<systemPropertyVariables>
+													<browserName>${browserName}</browserName>
+													<version>${version}</version>
+													<os>${os}</os>
+													<execPlatform>${execPlatform}</execPlatform>
+												</systemPropertyVariables>
+                                                <includes>
+                                                       <include>**/*CD.class</include>
+                                                </includes>
+                                                <testFailureIgnore>true</testFailureIgnore>
+                                         </configuration>
+                     </plugin>
+                     <plugin>
+							<groupId>net.masterthought</groupId>
+							<artifactId>maven-cucumber-reporting</artifactId>
+							<version>3.0.0</version>
+							<!-- version>3.10.1</version -->
+							<executions>
+							<execution>
+							<id>execution</id>
+							<phase>verify</phase>
+							<goals>
+							<goal>generate</goal>
+							</goals>
+							<configuration>
+							<projectName>SATURN</projectName>
+							<outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
+							<cucumberOutput>${project.build.directory}/json/Temp.json</cucumberOutput>
+							<parallelTesting>false</parallelTesting>
+							</configuration>
+							</execution>
+							</executions>
+							</plugin>
+							              </plugins>
+       </build>
+              	<profiles>
+		<profile>
+			<id>QA</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/test/resources/Environments/QA</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>Perf</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/test/resources/Environments/Perf</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		</profiles>
+</project>
+
+-- 
+Thanks & Regards
+-------------------------------------
+S.Ravisankar
+94865 42296

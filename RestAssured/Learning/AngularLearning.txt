@@ -1,0 +1,33 @@
+Angular 2 
+
+1.Download the git file from https://github.com/angular/quickstart
+   have downloaded it to C:\Users\suthakar79\Desktop\Angualr2\quickstart-master
+   
+2.Open the NodeJs command prompt from admin mode
+3.goto the folder where Quickstart downloaded here i have the path C:\Users\suthakar79\Desktop\Angualr2\quickstart-master
+
+4.C:\Users\suthakar79\Desktop\Angualr2\quickstart-master> npm install 
+this will install necessary files from package.json 
+
+5.once the installation done , please execute the below command
+  C:\Users\suthakar79\Desktop\Angualr2\quickstart-master> npm start
+this command open the Page with Hello Angular2 page ..
+
+Here you can start the code from visual studio code editior
+
+6. Setup Visual code editior
+Download visual code 
+Open the VC editior
+File-Open folder ->
+select the folder C:\Users\suthakar79\Desktop\Angualr2\quickstart-master
+
+
+===============================================================================================
+
+If your exisiting setup is problem and does not able to get start-up page 
+
+Please do the same above steps in different folder meaning
+
+2. if you have any components , please copy from app folder older directory to new directory means 
+(copy app folder from C:\Users\suthakar79\Desktop\quickstart-master to C:\Users\suthakar79\Desktop\Angualr2\quickstart-master)
+In this case i have already quickstart-master in desktop which has does not 

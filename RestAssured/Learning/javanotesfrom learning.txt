@@ -1,0 +1,117 @@
+ShipmentEntity
+    
+TransGlobal Shipping Company is a big name in the Logistics marketplace, with their global presence in over 10 countries. Having a widespread influence, the Company has huge connects with many Agents and Carriers for a customer – centric delivery. 
+
+A Shipment Entity can be handled by Customer himself, Agents, Carriers or the Company. At TransGlobal, there is enourmous shipment data flowing across and therefore they need an efficient system to handle them. Write a program that will retrieve the details of the Shipment Entity based on 4 types of people who handle it namely, Customer, Agent, Carrier and Company. Get all the details related to the Shipment Entity as input from the user.
+
+This problem uses the concept of Hierarchical Inheritance. ShipmentEntitty Class is the parent class and 4 classes Customer, Agent, Carrier and Company extends it. 
+
+[Note : Strictly adhere to the object oriented specifications given as a part of the problem statement. Use the same class names and member variable names. Create separate classes in separate files.]   
+ 
+
+1.Create a class named ShipmentEntity
+Include the following protected data members / attributes:
+
+     String shipmentEntityName
+     String identificationNumber
+     Include appropriate getters and setters and constructor
+    Constructor :  ShipmentEntity(String shipmentEntityName,String identificationNumber).
+    Include the  methods void display() which will be implemented by all its sub classes.     
+
+2.Create a class named Customer that extends ShipmentEntity
+      Include the following private data members / attributes:
+
+      Integer id
+      String name
+      Include appropriate getters and setters and constructor.
+      Constructor : Customer(String shipmentEntityName,String identificationNumber,Integer id,String name)
+      Include the following methods :
+
+S.NO	Method Name	Method Description
+1	void display()	display the customer details
+Use System.out.format("%-15s %-25s %-15s %-15s\n","Name","Identification Number","Customer Id","Customer Name") in display method.
+
+3.Create a class named Company that extends ShipmentEntity 
+      Include the following private data members / attributes:
+
+      String identifier
+      String iata
+      String fmc    
+      Include appropriate getters and setters and constructor.
+     Constructor :  Company(String name,String identificationNumber,String identifier,String iata,String fmc).
+      Include the following methods :
+    
+
+S.NO	Method Name	Description
+1	void display()	display the company details
+Use  System.out.format("%-15s %-25s %-15s %-15s %-15s\n","Name","Identification Number","Company Name","IATA","FMC") in display method.
+  
+4.Create a class named Agent that extends ShipmentEntity
+    Include the following private data members / attributes:
+
+    String name
+    String iata
+    String fmc;   
+    Include appropriate getters and setters and constructor.
+    Constructor as follows Agent(String shipmentEntityName,String identificationNumber,String name,String iata,String fmc)
+   Include the following methods :
+
+S.NO	Method Name	Description
+1	void display()	display the  agent details
+Use  System.out.format("%-15s %-25s %-15s %-15s %-15s\n","Name","Identification Number ","Agent Name","IATA","FMC");
+
+5.Create a class named Carrier that extends ShipmentEntity
+  Include the following private data members / attributes:
+
+  String carrierCode
+  String iata
+  Include the following methods :
+  Include appropriate getters and setters and constructor.
+  Constuctor : Carrier(String name,String identificationNumber,String carrierCode,String iata).
+ 
+
+S.NO	Method Name	Description
+1	void display()	display the carrier details
+Use System.out.format("%-15s %-25s %-15s %-15s\n","Name","Identification Number","Code Name","IATA");   
+
+ 
+Input and Output Format:
+Refer sample input and output for formatting specifications.
+Note : [All text in bold corresponds to input and the rest corresponds to output.]
+ 
+Sample Input and Output:
+Enter the number of shipment entity
+3
+Enter the shipment entity 1 details :
+Select the shipment entity type
+1)Customer
+2)Company
+3)Agent
+4)Carrier
+
+
+Laptop,800101,111,Rahul
+Enter the shipment entity 2 details :
+Select the shipment entity type
+1)Customer
+2)Company
+3)Agent
+4)Carrier
+
+Micro phone,801102,211,Mitharan
+Enter the shipment entity 3 details :
+Select the shipment entity type
+1)Customer
+2)Company
+3)Agent
+4)Carrier
+3
+Electric Fan,912115,Rahul,USCTG1230,PMI/SJC/1361
+Shipment details are
+Enter the shipment entity type to display
+Customer
+Name            Identification Number     Customer Id     Customer Name  
+Laptop          800101                    111             Rahul          
+Micro phone     801102                    211             Mitharan       
+
+ 
