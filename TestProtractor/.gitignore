@@ -1,0 +1,7 @@
+target
+.idea
+RestAssured.iml
+.settings
+node_modules
+.project
+.tern-project

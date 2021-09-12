@@ -1,0 +1,27 @@
+{
+  "name": "mochachai",
+  "version": "1.0.0",
+  "description": "Basic chai test",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --timeouts 10000",
+    "report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "allure-commandline": "^2.13.0",
+    "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "install": "^0.13.0",
+    "mocha": "^7.1.1",
+    "mocha-allure-reporter": "^1.4.0",
+    "object-path": "^0.11.4",
+    "object-traversal-by-path": "^2.0.2",
+    "request": "^2.88.2",
+    "traverse": "^0.6.6"
+  }
+}
