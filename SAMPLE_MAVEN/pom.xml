@@ -239,7 +239,7 @@
                    <source>1.8</source>
                  	<target>1.8</target>
                  	<fork>true</fork>
-                 <executable>c:\Program Files (x86)\Java\jdk1.8.0_151\bin\javac</executable>
+                 <executable>C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin\javac</executable>
                  </configuration>
             </plugin>
 			<plugin>
@@ -292,8 +292,8 @@
                                          <goals>
                                                 <goal>test</goal>
                                          </goals>
-                                         </execution>
-                  				</executions>
+                                   </execution>
+                  		</executions>
                                          <configuration>
                                                 <parallel>classes</parallel>
                                                 <forkCount>10</forkCount>

@@ -14,7 +14,8 @@ public class DoubleLinkedList<T>  {
 	 * @param args
  */
 	private static class Node <T>{
-		T data;Node <T> next,pre;
+		T data;
+		Node <T> next,pre;
 		public Node(T data){this.data=data;}
 			}// end of class Node
 	public Node<T> head;

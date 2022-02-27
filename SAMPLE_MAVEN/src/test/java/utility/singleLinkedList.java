@@ -29,7 +29,7 @@ private static class Node <T>{
 	}//End of NODE class
 	public Node<T> head;
 	public int size=0;
-	public <T> void display(){
+	public void display(){
 			Node<T> current=(Node<T>) head;
 			while(current!=null){
 				System.out.print(current.getData()+"-->");

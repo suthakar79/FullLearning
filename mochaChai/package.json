@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --timeouts 10000",
+    "test": "mocha --timeouts 1000",
     "report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
   },
   "author": "",
@@ -17,6 +17,7 @@
     "axios": "^0.19.2",
     "chai": "^4.2.0",
     "install": "^0.13.0",
+    "jsonpath": "^1.1.1",
     "mocha": "^7.1.1",
     "mocha-allure-reporter": "^1.4.0",
     "object-path": "^0.11.4",

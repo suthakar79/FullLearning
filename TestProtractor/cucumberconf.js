@@ -12,7 +12,7 @@ exports.config = {
     ],
     // cucumber command line options
     cucumberOpts: {
-        'no-colors': true,
+        'no-colors': false,
         require: ['./test/stepdefinitions/*.js'],  // require step definition files before executing features
         tags: '@tag1',                      // <string[]> (expression) only execute the features or scenarios with tags matching the expression
         strict: true,                  // <boolean> fail if there are any undefined or pending steps

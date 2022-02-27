@@ -20,8 +20,8 @@ public class BinaryTree <T>{
 		else if(value<=root.data){
 			if(root.left==null)
 				root.left=newnode;
-			else
-				
+		//	else
+		}	
 		else {
 			if(root.right==null)
 				root.right=newnode;

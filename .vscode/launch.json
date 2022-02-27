@@ -1,0 +1,56 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Launch removeDuplicate",
+        "request": "launch",
+        "mainClass": "utility.removeDuplicate",
+        "projectName": "SAMPLE_MAVEN"
+      },
+      {
+        "type": "java",
+        "name": "Launch TreeNode",
+        "request": "launch",
+        "mainClass": "utility.TreeNode",
+        "projectName": "SAMPLE_MAVEN"
+      },
+      {
+        "type": "java",
+        "name": "Launch DoubleLinkedList",
+        "request": "launch",
+        "mainClass": "utility.DoubleLinkedList",
+        "projectName": "SAMPLE_MAVEN"
+      },
+      {
+        "type": "java",
+        "name": "Launch singleLinkedList",
+        "request": "launch",
+        "mainClass": "utility.singleLinkedList",
+        "projectName": "SAMPLE_MAVEN"
+      },
+      {
+        "type": "java",
+        "name": "Launch Amazonprogram",
+        "request": "launch",
+        "mainClass": "utility.Amazonprogram",
+        "projectName": "SAMPLE_MAVEN"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "C:/Users/RSendurajan/AppData/Roaming/npm/node_modules/protractor/bin/protractor",
+        "args": [
+          "${workspaceRoot}/conf.js"
+        ]
+      },
+      {
+        "cucumberautocomplete.steps": [
+          "test/features/step_definitions/*.js",
+          "node_modules/qa-lib/src/step_definitions/*.js"
+        ],
+        "cucumberautocomplete.strictGherkinCompletion": true
+      }
+    ]
+  }

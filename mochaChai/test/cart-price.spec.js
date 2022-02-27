@@ -1,7 +1,9 @@
 var Request = require("request"); 
 var expect = require('chai').expect;
+const axios=require('axios');
 var fs = require('fs');// Used to Read Input Jsonfile 
 const process = require('process'); 
+const assert=require('assert');
 var apiUtilPage = require(process.cwd()+'/apiHelper/apiUtil');
 describe("YUM Assessment testing", function() {
 	var cart_idFromcartAPI;
@@ -22,14 +24,14 @@ describe("YUM Assessment testing", function() {
                     if (error) { return console.log(error);}
 				 // validating Response code 200 to proceed further validation
 				   expect(response.statusCode).to.equal(200);
-                    //Converting api response to JavaScript object and assign it to variable
-					 MenuResponseJsonObj=JSON.parse(body);
+                 //Converting api response to JavaScript object and assign it to variable
+					MenuResponseJsonObj=JSON.parse(body);
 					done();
                 });
             });
             
         //The below it block used to get Cart id from Cart Api 
-    	it.only("Create Cart", function(done) {
+    	it("Create Cart", function(done) {
 		   	try{
 			  const createCartRequest = fs.readFileSync(process.cwd()+'/test/createcart.json','utf8')
 			  console.log("Create Cart Request  :"+createCartRequest);
@@ -92,7 +94,21 @@ describe("YUM Assessment testing", function() {
             } catch (err) { console.error(err)}
               done();
         });// it block closure for ADD Product to Cart 
-           
+         
+		
+		it.skip('axios example for Api',function(done){
+			axios.get('https://chercher.tech/sample/api/product/read',
+				{timeouts:5000},
+				{"headers" : { "content-type": "application/json" }}
+				)
+				 .then(res=>{
+					 assert.equal(res.status,200,"statuscode is not right");
+					 console.log(res.data)
+					})
+				 .catch(err=>console.log(err))
+				 done();
+	
+		})
         	
 			/*
 			this function used to validate the base price of product against with Price from PublishMenu API for the same product

@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class TreeNode <T>{
 		int  data;
-		TreeNode left,right;
+		TreeNode<T> left,right;
 		TreeNode(int data){this.data=data;}
 		static int level=0;
 		public  void insert(int value){
