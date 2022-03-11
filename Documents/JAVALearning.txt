@@ -1,0 +1,917 @@
+personal github
+
+https//github.com/suthakar79/LearningCode
+
+email:suthakar79@gmail.com
+password: Ready2go
+
+
+
+1.Sorting using Arrays
+Find 2nd Largest Number in Array using Arrays
+import java.util.Arrays;  
+public class SecondLargestInArrayExample1{  
+public static int getSecondLargest(int[] a, int total){  
+Arrays.sort(a);  
+return a[total-2];  
+}  
+
+using collections
+public static int getSecondLargest(Integer[] a, int total){  
+List<Integer> list=Arrays.asList(a);  
+Collections.sort(list);  
+int element=list.get(total-2);  
+return element;  
+}  
+
+Static Methods and Static variables
+
+Static variables can be accessed by Static and Non-static methods
+Static methods cannot access non static variables .if we try to access non static varible inside static methods thos we are getting 
+ error: non-static variable rollno cannot be referenced from a static context
+rollno=100;
+The static method can not use non static data member or call non-static method directly.
+this and super cannot be used in static context.
+
+ Can we execute a program without main() method? Not possible 1.7 and above
+ 
+ HAS-A Relationship ;Aggregation in Java
+ class Employee{  
+int id;  
+String name;  
+Address address;//Address is a class  
+...  
+}  
+
+Mothid overloading
+Static methods can not be overridden because they are not part of the object's state. Rather, they belongs to the class (i.e they are class methods). It is ok to overload static (and final) methods. No,Static methods can't be overriden as it is part of a class rather than an object.
+
+Runtime Polymorphism:
+Rule: Runtime polymorphism can't be achieved by data members.
+class Bike{  
+ int speedlimit=90;  
+}  
+class Honda3 extends Bike{  
+ int speedlimit=150;  
+  
+ public static void main(String args[]){  
+  Bike obj=new Honda3();  
+  System.out.println(obj.speedlimit);//90  
+}  
+
+Ans : 90 
+
+Method is overridden not the datamembers, so runtime polymorphism can't be achieved by data members
+
+Java SequenceInputStream Reads data from two file 
+FileInputStream input1=new FileInputStream("D:\\testin.txt");    
+   FileInputStream input2=new FileInputStream("D:\\testout.txt");    
+   SequenceInputStream inst=new SequenceInputStream(input1, input2);    
+   int j;    
+   while((j=inst.read())!=-1){    
+    System.out.print((char)j);    
+   }    
+   inst.close();    
+   input1.close();    
+   input2.close();    
+
+Zoneid:
+
+CST - America/Chicago MST;America/Phoenix PST : America/Los_Angeles  EST :America/New_York
+
+ ZoneId zone1 = ZoneId.of("Asia/Kolkata");  
+    ZoneId zone2 = ZoneId.of("Asia/Tokyo");  
+    LocalTime time1 = LocalTime.now(zone1);  
+    System.out.println("India Time Zone: "+time1);  
+    LocalTime time2 = LocalTime.now(zone2);  
+    System.out.println("Japan Time Zone: "+time2);  
+    long hours = ChronoUnit.HOURS.between(time1, time2);  
+    System.out.println("Hours between two Time Zone: "+hours);  
+    long minutes = ChronoUnit.MINUTES.between(time1, time2);  
+    System.out.println("Minutes between two time zone: "+minutes); 
+	
+	
+	to retrieve current Timezone 
+	
+1.	Clock c=Clock.systemDefaultZone();
+	c.getZone();
+	
+	Ans : Asia/Kolkata
+	
+2.	 ZonedDateTime zone =ZonedDateTime.now();  
+    System.out.println(zone.getZone());  
+	
+3. ZoneId z = ZoneId.systemDefault();  
+    String s = z.getId()
+	
+java.sql.date
+
+Date d=new Date();
+sysout(d);
+Ans: 2018-05-13	
+
+to Retrieve Timezone ids
+import java.util.*;  
+public class TimeZoneExample1 {  
+   public static void main( String args[] ){         
+   String[] id = TimeZone.getAvailableIDs();        
+   System.out.println("In TimeZone class available Ids are: ");  
+   for (int i=0; i<id.length; i++){  
+   System.out.println(id[i]);  
+   }   
+   }      
+}  
+
+Convert Date to String
+Date date = new Date();  
+    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");  
+    String strDate = formatter.format(date);  
+    System.out.println("Date Format with MM/dd/yyyy : "+strDate);
+
+Convert String to Date
+String sDate1="31/12/1998";  
+SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+Date date1=formatter.parse(SDate1);
+sysout(date1)
+
+Class.forName("oracle.jdbc.driver.OracleDriver");  
+  
+//step2 create  the connection object  
+Connection con=DriverManager.getConnection(  
+"jdbc:oracle:thin:@localhost:1521:xe","system","oracle"); 
+
+Selenium
+
+https://www.guru99.com/all-about-excel-in-selenium-poi-jxl.html
+
+
+Finding broken links using URL
+
+package Selenium.Locators;
+ 
+import java.util.List;
+ 
+import java.net.MalformedURLException;
+ 
+import java.net.URL;
+ 
+import java.util.ArrayList;
+ 
+import java.util.HashSet;
+ 
+import java.util.Iterator;
+ 
+import java.util.NoSuchElementException;
+ 
+import java.util.Set;
+ 
+import java.util.concurrent.TimeUnit;
+ 
+import org.openqa.selenium.By;
+ 
+import org.openqa.selenium.JavascriptExecutor;
+ 
+import org.openqa.selenium.Keys;
+ 
+import org.openqa.selenium.WebDriver;
+ 
+import org.openqa.selenium.WebDriver.Navigation;
+ 
+import org.openqa.selenium.WebDriver.Options;
+ 
+import org.openqa.selenium.WebElement;
+ 
+import org.openqa.selenium.firefox.FirefoxDriver;
+ 
+import org.openqa.selenium.firefox.FirefoxProfile;
+ 
+import org.openqa.selenium.support.ui.*;
+ 
+import com.google.common.base.Function;
+ 
+import com.google.common.base.Predicate;
+ 
+import Selenium.utils.*;
+ 
+//import org.openqa.selenium.*;
+ 
+//import org.openqa.selenium.firefox.*;
+ 
+public class program {
+ 
+  public static List findAllLinks(WebDriver driver)
+ 
+  {
+ 
+	  List elementList = new ArrayList();
+ 
+	  elementList = driver.findElements(By.tagName("a"));
+ 
+	  elementList.addAll(driver.findElements(By.tagName("img")));
+ 
+	  List finalList = new ArrayList(); ;
+ 
+	  for (WebElement element : elementList)
+ 
+	  {
+ 
+		  if(element.getAttribute("href") != null)
+ 
+		  {
+ 
+			  finalList.add(element);
+ 
+		  }		  
+ 
+	  }	
+ 
+	  return finalList;
+ 
+  }
+ 
+	public static String isLinkBroken(URL url) throws Exception
+ 
+	{
+ 
+		//url = new URL("http://yahoo.com");
+ 
+		String response = "";
+ 
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+ 
+		try
+ 
+		{
+ 
+		    connection.connect();
+ 
+		     response = connection.getResponseMessage();	        
+ 
+		    connection.disconnect();
+ 
+		    return response;
+ 
+		}
+ 
+		catch(Exception exp)
+ 
+		{
+ 
+			return exp.getMessage();
+ 
+		}  				
+ 
+	}
+ 
+	public static void main(String[] args) throws Exception {
+ 
+		// TODO Auto-generated method stub
+ 
+			FirefoxDriver ff = new FirefoxDriver();
+ 
+			ff.get("http://toolsqa.wpengine.com/automation-practice-switch-windows/");
+ 
+			//ff.get("http://www.yahoo.com/");		    
+ 
+		    List allImages = findAllLinks(ff);    
+ 
+		    System.out.println("Total number of elements found " + allImages.size());
+ 
+		    for( WebElement element : allImages){
+ 
+		    	try
+ 		    	{
+ 			        System.out.println("URL: " + element.getAttribute("href")+ " returned " + isLinkBroken(new URL(element.getAttribute("href"))));
+ 
+		    	}
+ 
+		    	catch(Exception exp)
+ 
+		    	{
+ 
+		    		System.out.println("At " + element.getAttribute("innerHTML") + " Exception occured -&gt; " + exp.getMessage());	    		
+ 
+		    	}
+ 
+		    }
+ 
+	    }
+ 
+	}
+	
+Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)							
+			.withTimeout(30, TimeUnit.SECONDS) 			
+			.pollingEvery(5, TimeUnit.SECONDS) 			
+			.ignoring(NoSuchElementException.class);
+
+Function<WebDriver, WebElement> function = new Function<WebDriver, Boolean>()
+				{
+					public WebElement  apply(WebDriver driver) {
+						return driver.findElement(By.id("sample"));
+					}
+				});			
+				wait.until(function);
+	
+PDF Validation 
+PDFBox and Java 8
+	<dependency>
+  <groupId>org.apache.pdfbox</groupId>
+  <artifactId>pdfbox</artifactId>
+  <version>2.0.4</version>
+</dependency>
+
+public boolean verifyPDFContent(String strURL, String reqTextInPDF) {
+		boolean flag = false;
+		PDFTextStripper pdfStripper = null;
+		PDDocument pdDoc = null;
+		COSDocument cosDoc = null;
+		String parsedText = null;
+		try {
+			URL url = new URL(strURL);
+			BufferedInputStream file = new BufferedInputStream(url.openStream());
+			PDFParser parser = new PDFParser(file);
+			parser.parse();
+			cosDoc = parser.getDocument();
+			pdfStripper = new PDFTextStripper();
+			pdfStripper.setStartPage(1);
+			pdfStripper.setEndPage(1);
+			pdDoc = new PDDocument(cosDoc);
+			parsedText = pdfStripper.getText(pdDoc);
+		} catch (MalformedURLException e2) {
+			System.err.println("URL string could not be parsed "+e2.getMessage());
+		} catch (IOException e) {
+			System.err.println("Unable to open PDF Parser. " + e.getMessage());
+			try {
+				if (cosDoc != null)
+					cosDoc.close();
+				if (pdDoc != null)
+					pdDoc.close();
+			} catch (Exception e1) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("+++++++++++++++++");
+		System.out.println(parsedText);
+		System.out.println("+++++++++++++++++");
+		if(parsedText.contains(reqTextInPDF)) {
+			flag=true;
+		}
+		return flag;
+	}
+	
+	Flash testing (https://www.guru99.com/flash-testing-selenium.html)
+	
+	public static void main(String[] args) throws InterruptedException {								
+  	// Open firefox browser		
+	FirefoxDriver driver = new FirefoxDriver();			
+  	// Maximize browser		
+	driver.manage().window().maximize();		
+  	// Under Flash jar file there is separate FlashObjectWebDriver class		
+	FlashObjectWebDriver flashApp = new FlashObjectWebDriver(driver, "myFlashMovie");		
+  	// Pass the URL of video		
+	driver.get("http://demo.guru99.com/test/flash-testing.html");			
+	Thread.sleep(5000);		
+  	flashApp.callFlashObject("Play");			
+  	Thread.sleep(5000);		
+	flashApp.callFlashObject("StopPlay");			
+	Thread.sleep(5000);		
+	flashApp.callFlashObject("SetVariable","/:message","Flash testing using selenium Webdriver");
+    System.out.println(flashApp.callFlashObject("GetVariable","/:message"));						
+  }		
+ 
+  
+  Interview Question on May 14/2018
+  
+  1.How parameterization is achieved (expect TestNg)
+  2.diff b/w HartAssert(Assert) and SoftAssert( if)
+  3.how to handle Excelsheet in Selenium(Apache POI)
+  4.what is the parameter considered for automation framework
+  5.Diff b/w TreeMap and HashMap
+  6.how to capture cpatcha in selenium script
+  
+  To display Decimal Format only if has any precision Digit if not it will display whole Number
+    float value=12.34
+	DecimalFormat format = new DecimalFormat("#.##");
+	sysout(format.format(value);   Ans : 12.34
+	
+	if value=12  Ans : 12 not 12.0
+	
+to get display 2 decimal place irrespective of digits
+ System.out.format(".2f\n",total);	
+ if total=12.3 or 12.30  Ans : 12.30 (zero will be displayed)
+ 
+ 03/16/2018 -Saturday 4.19 PM
+ 
+ 1.InternetExplorer driver (ie)
+ System.setProperty("webdriver.ie.driver","driver path\\IEDriverServer.exe");
+ WebDriver driver=new InternetExplorerDriver();();
+	
+ 2.Actions and Checking backgroundcolor 
+ Actions builder = new Actions(driver);
+ Action mouseOverHome = builder
+                        .moveToElement(link_Home)
+                        .build();
+               
+                String bgColor = td_Home.getCssValue("background-color");
+                System.out.println("Before hover: " + bgColor);        
+                mouseOverHome.perform();        
+                bgColor = td_Home.getCssValue("background-color");
+                System.out.println("After hover: " + bgColor);
+ 3.Double click in Selenium using Actions class
+
+Actions actions = new Actions(driver);
+WebElement elementLocator = driver.findElement(By.id("ID"));
+actions.doubleClick(elementLocator).perform();
+
+4.Rightclick 
+Actions actions = new Actions(driver);
+WebElement elementLocator = driver.findElement(By.id("ID"));
+actions.contextClick(elementLocator).perform();
+
+5.Parallel Execution 
+https://www.baeldung.com/maven-junit-parallel-tests  Maven Junit Parallel
+https://automationrhapsody.com/running-cucumber-tests-in-parallel/   Maven Cucumber parallel - Automation generation of runners
+https://www.youtube.com/watch?v=crrfQ8e-uUk   Maven Cucumber Parallel Execution
+10/28/2019 7.23 PM on diwali 
+
+6.Cucumber Options with different
+https://testingneeds.wordpress.com/tag/cucumberoptions/
+1.Format/plugIns 2. Tags 3. Monochrome 4.snippets 5.Feature 6.glue 7 .dryRun 8.strict
+strict: true  //if true cucumber will fail if undefined steps /missing steps
+
+7.Chromebrowser as headeless using ChromeOptions
+ChromeOptions options=new ChromeOptions()
+options.addArgument("--headless");
+WebDriver driver=new Chromedriver(options);
+guru99.com 
+
+https://www.youtube.com/watch?v=I139ptfCEtg&list=PLhW3qG5bs-L_dgIr3hiOlnNIO8NGlXQnP&index=8 has below links for your use.
+https://juliemr.github.io/protractor-...
+https://www.protractortest.org/#/api
+https://www.protractortest.org/#/locators
+https://gist.github.com/javierarques/0c4c817d6c77b0877fda jasmins Cheat sheet
+
+8. Jenkins
+https://www.youtube.com/watch?v=63HEKFh8T2c&list=PLhW3qG5bs-L_ZCOA4zNPSoGbnVQ-rp_dG&index=7
+jenkins: URL http://localhost:8080/
+userName: suthakar79
+Password :Ready2go
+
+Build Triggers: 
+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
+
+https://github.com/suthakar79/LearningCode.git
+
+Protractors Interview questions :
+https://www.youtube.com/watch?v=6s3xHTAN-eo
+
+Read Data from Excel https://www.youtube.com/watch?v=vzvC4dYE84Q using i xlsx
+
+Reading and writing data back to excel using javascript https://www.youtube.com/watch?v=tKz_ryychBY
+
+SQL Query :
+Nth highest salary in SQL SERVER using TOP keyword
+You can use the TOP keyword to find the Nth highest salary in SQL SERVER. This is also faster than the previous solution because here we are calculating Nth maximum salary without a subquery.
+
+SELECT TOP 1 salary FROM (SELECT DISTINCT TOP N salary FROM #Employee ORDER BY salary DESC) AS temp ORDER BY salary
+
+3rd highest salary
+SELECT TOP 1 salary FROM (SELECT DISTINCT TOP 3 salary FROM #Employee ORDER BY salary DESC) AS temp ORDER BY salary
+
+Explanation: 
+By default ORDER BY clause print rows in ascending order, since we need the highest salary at the top, we have used ORDER BY DESC, which will display salaries in descending order. 
+Again DISTINCT is used to remove duplicates. The outer query will then pick the top most salary, which would be your Nth highest salary.
+
+Read more: https://javarevisited.blogspot.com/2016/01/4-ways-to-find-nth-highest-salary-in.html#ixzz64OtETqYH
+
+My SQL supports Limit
+
+SELECT salary FROM Employee ORDER BY salary DESC LIMIT N-1, 1
+2nd highest salary in MySQL without subquery:
+SELECT salary FROM Employee ORDER BY salary DESC LIMIT 1,1
+salary
+
+
+Read more: https://javarevisited.blogspot.com/2016/01/4-ways-to-find-nth-highest-salary-in.html#ixzz6FGVB88Ou
+
+using subquery will work in all database 
+Nth salary 
+SELECT name, salary FROM #Employee e1 WHERE N-1 = (SELECT COUNT(DISTINCT salary) FROM #Employee e2 WHERE e2.salary > e1.salary)
+
+3rd salary
+SELECT name, salary FROM #Employee e1 WHERE 3-1 = (SELECT COUNT(DISTINCT salary) FROM #Employee e2 WHERE e2.salary > e1.salary)
+
+Read more: https://javarevisited.blogspot.com/2016/01/4-ways-to-find-nth-highest-salary-in.html#ixzz64OvuIy8f
+
+The following SQL statement lists the number of customers in each country, sorted high to low:
+
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country ORDER BY COUNT(CustomerID) DESC;
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5 ORDER BY COUNT(CustomerID) DESC;
+
+find the count duplicate of records
+
+The first query we’re going to write is a simple query to verify whether duplicates do indeed exist in the table. For our example, my query looks like this:
+
+SELECT username, email, COUNT(*) FROM users GROUP BY username, email HAVING COUNT(*) > 1
+
+If any rows are returned, that means we have duplicates. In this example, our results look like this:
+
+USERNAME	EMAIL	COUNT
+Pete	pete@example.com	2
+Jessica	jessica@example.com	2
+Miles	miles@example.com	2
+
+
+DB Test Database website 
+https://app.mode.com/editor/ravi_sankar/reports/edc76a301041 - choose learning SQL
+DB SQL Tutorial 
+https://mode.com/sql-tutorial/
+
+www.db4free.com :create Db 
+
+selenium 4 features
+https://dzone.com/articles/new-comings-with-seleniumnbsp4
+
+protractor webpage tutorials
+https://chercher.tech/protractor/
+
+JavaScript course 
+https://www.youtube.com/watch?v=Qqx_wzMmFeA
+https://www.w3schools.com/js/
+
+Webservice and API difference 
+https://www.youtube.com/watch?v=PD_HtuOGuic
+
+API using RestUtil BDD Model
+
+Features:
+ScenarioOutline :
+Given i pass the header info to the BIQ request of the BIQ API
+| ACCEPT     | application/xml|
+| contentType| application/xml|
+When i pass <requestxml> to <serviceURl> using post method
+Then I validate the response code as <responsecode>
+And Log  the Response in the Logfile.
+
+Examples:
+|Requestxml |serviceURl|responsecode|
+|Request.xml|ingestionRouter/rest/ingest| 200|
+
+
+Step definitions
+
+
+package utility;
+
+import cucumber.api.DataTable;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+import java.util.HashMap;
+import java.util.List;
+
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.is;
+
+public class Apiutil {
+    public static void performGetOps(String url){
+//        given()
+//                .contentType(ContentType.JSON)
+//        .when()
+//                .get(url)
+//        .then()
+//                .statusCode(200)
+//                .body("author1",containsString("RAVI")); // validating Response without printing response in console
+        Response res=given()
+                    .contentType(ContentType.JSON)
+                .when()
+                    .get(url);
+         //To print response in console
+        String resbody=res.getBody().prettyPrint();
+
+    }
+
+    public static void performGetWithPathparams(String value){
+        given()
+                .contentType(ContentType.JSON)
+        .with()
+                .pathParam("post",value)
+        .when()
+                .get("http://localhost:3000/posts/{post}") // equal to https://localhost:3000/posts/1(value passed)
+        .then()
+                .statusCode(200) //validAating statuscode
+                .body("author1",is("RAVI")); // validating response body
+    }
+
+    public static void performPostwithBodyParameter(String URL){
+        HashMap<String,String> map=new HashMap<String,String>();
+        map.put("id","5");
+        map.put("title" ,"JsonServer5");
+        map.put("author5" ,"sankar");
+        given()
+                .contentType(ContentType.JSON)
+                .body(map)
+        .when()
+                .post(URL)
+        .then()
+                .statusCode(201)
+                .body("author5",is("sankar"));
+
+    }
+
+
+    public static void performPostwithBodyParameterasDatatable(DataTable dataTable,String URL){
+        List<List<String>> data = dataTable.raw();
+        HashMap<String,String> map=new HashMap<String,String>();
+        map.put("id",data.get(1).get(0));
+        map.put("title" ,data.get(1).get(1));
+        map.put("author5" ,data.get(1).get(2));
+        given()
+                .contentType(ContentType.JSON)
+                .body(map)
+                .when()
+                .post(URL)
+                .then()
+                .statusCode(201)
+                .body("author5",is(data.get(1).get(2)));
+
+    }
+
+    public static void performDeleteWithPathparams(String value){
+        given()
+                .contentType(ContentType.JSON)
+                .with()
+                .pathParam("post",value)
+         .when()
+                .delete("http://localhost:3000/author/{post}") // equal to https://localhost:3000/author/1(value passed)
+         .then()
+                .statusCode(200); //validAating statuscode
+
+    }
+
+    public static void performPUTtwithBodyParameterasDatatable(DataTable dataTable,String URL){
+        List<List<String>> data = dataTable.raw();
+        HashMap<String,String> map=new HashMap<String,String>();
+        map.put("id",data.get(1).get(0));
+        map.put("title" ,data.get(1).get(1));
+        map.put("author5" ,data.get(1).get(2));
+        given()
+                .contentType(ContentType.JSON)
+                .pathParam("post",data.get(1).get(0))
+                .body(map)
+        .when()
+                .put("http://localhost:3000/author/{post}")
+       .then()
+                .statusCode(200)
+                .body("author5",is(data.get(1).get(2)));
+
+    }
+}
+
+GIT reset hard courese : https://www.youtube.com/watch?v=VUuGa1QFmcA&t=1s
+https://happygitwithr.com/
+
+Cucumber : https://cucumber.io/docs/bdd/
+
+cucumber -protractor : https://semaphoreci.com/community/tutorials/getting-started-with-protractor-and-cucumber
+cucumber-protractor : https://www.youtube.com/watch?v=4teM1pntTVg
+
+
+// Write a function that takes one parameter as Integer and then print that number in console in the following format: 
+// e.g. If I pass 6 to the function, I should get this : 
+// 1
+// 2 3 
+// 4 5 6
+
+// and If I pass 10, i should get something like :
+// 1
+// 2 3 
+// 4 5 6
+// 7 8 9 10
+class printingNumber
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in)
+System.out.println("Enter the no");
+int x=sc.nextInt();
+for(int 1=i;i<=x/2;i++)
+{
+int k=i
+for(j=1;j<=i-1;j++)
+System.out.println(k++ +" ");
+}
+}
+
+// User enters 5
+// i = 1 --> prints 1
+// i = 2 --> prints 2 3
+// i = 3 --> prints 
+
+Different patterns and triangel printing , use the below website for the reference 
+https://www.geeksforgeeks.org/c-programs-print-interesting-patterns/
+
+Jmeter Videos : https://www.youtube.com/watch?v=5FyVKVAqEJo&list=PLhW3qG5bs-L-zox1h3eIL7CZh5zJmci4c&index=4
+
+Thread pools in java
+Single Thread Executor : A thread pool with only one thread. So all the submitted tasks will be executed sequentially. Method : Executors.newSingleThreadExecutor()
+
+Cached Thread Pool : A thread pool that creates as many threads it needs to execute the task in parrallel. The old available threads will be reused for the new tasks. If a thread is not used during 60 seconds, it will be terminated and removed from the pool. Method : Executors.newCachedThreadPool()
+
+Fixed Thread Pool : A thread pool with a fixed number of threads. If a thread is not available for the task, the task is put in queue waiting for an other task to ends. Method : Executors.newFixedThreadPool()
+
+Scheduled Thread Pool : A thread pool made to schedule future task. Method : Executors.newScheduledThreadPool()
+
+Single Thread Scheduled Pool : A thread pool wit
+
+https://www.geeksforgeeks.org/c-program-to-print-a-pattern-of-numbers/
+
+Difference between set and Map 
+
+Map																						set 
+1.strore date on Key and value                                              stores data on the value only
+2.Map can't travel back 													can travel back using iterator.decenditerator
+3.dupplicate allowed on Values only not on Keys								No duplicate on values.
+
+oops concepts implemented in automation framework
+softwaretestingmaterial.com/oops-concept-in-automation-framework/
+
+https://www.softwaretestingmaterial.com/sql-interview-questions/
+
+API RestAssured Authentication
+
+restassured.io
+Document details: https://github.com/rest-assured/rest-assured/wiki/Usage#basic-authentication
+
+https://www.james-willett.com/rest-assured-gpath-json  : JSON Max /Min /Find /Find All with examples
+
+1. RestAssured.useRelaxedHTTPSValidation()
+2. Basic 
+	2.1 preemptive-username & Password
+	2.2 chanllege-username & password
+3.oauth
+	3.1 outh1- consumer key,ConsumerSecret,SessionKey,SessionSecret ( Need to confirm )
+	3.2 outh2- Bearer token
+4.Keystore
+	Ssl
+	in most situations ssl should just work out of the box thanks to the excellent work of http builder and http client. There are however some cases where you'll run into trouble. You may for example run into a sslpeerunverifiedexception if the server is using an invalid certificate. The easiest way to workaround this is to use "relaxed https validation". For example:
+
+	Given().relaxedhttpsvalidation().when().get("https://some_server.com"). .. 
+	You can also define this statically for all requests:
+
+	Restassured.userelaxedhttpsvalidation();
+	or in a request specification.
+
+	This will assume an sslcontext protocol of ssl. To change to another protocol use an overloaded versionen of relaxedhttpsvalidation. For example:
+
+	Given().relaxedhttpsvalidation("tls").when().get("https://some_server.com"). .. 
+	You can also be more fine-grained and create java keystore file and use it with rest assured. It's not too difficult, first follow the guide here and then use the keystore in rest assured like this:
+
+	Given().keystore("/pathtojksinclasspath", <password>). .. 
+	Or you can specify it for every request:
+
+	Restassured.keystore("/pathtojksinclasspath", <password>);
+	you can also define a keystore in a re-usable specification.
+
+	If you already loaded a keystore with a password you can use it as a truststore:
+
+	Restassured.truststore(keystore);
+	
+
+
+https://www.youtube.com/watch?v=w-1EvCAszgE
+https://www.youtube.com/watch?v=GMuFZMBZLg4 oauth1.0
+https://www.youtube.com/watch?v=GMuFZMBZLg4 oauth2 - bearer token
+
+Authentication : when you are login to gamil with username and password.
+Authorization: After login , google paid prodcucts not authorized to access to products
+
+Use the response to verify other parts of the response
+You can use data from the response to verify another part of the response. For example consider the following JSON document returned from service x:
+
+{ "userId" : "some-id", "href" : "http://localhost:8080/some-id" }
+You may notice that the "href" attribute ends with the value of the "userId" attribute. If we want to verify this we can implement a io.restassured.matcher.ResponseAwareMatcher and use it like this:
+
+get("/x").then().body("href", new ResponseAwareMatcher<Response>() {
+                                  public Matcher<?> matcher(Response response) {
+                                          return equalTo("http://localhost:8080/" + response.path("userId"));
+                                  }
+                       });
+If you're using Java 8 you can use a lambda expression instead:
+
+get("/x").then().body("href", response -> equalTo("http://localhost:8080/" + response.path("userId"));
+
+
+
+
+Diff between smoke testing and sanity testing 
+https://www.janbasktraining.com/blog/smoke-vs-sanity-testing/
+
+evidation:
+An array A consisting of N integers is given. An equilibrium index of this array is any integer P such that 0 ≤ P < N and the sum of elements of lower indices is equal to the sum of elements of higher indices, i.e.
+A[0] + A[1] + ... + A[P−1] = A[P+1] + ... + A[N−2] + A[N−1].
+Sum of zero elements is assumed to be equal to 0. This can happen if P = 0 or if P = N−1.
+
+For example, consider the following array A consisting of N = 8 elements:
+
+  A[0] = -1
+  A[1] =  3
+  A[2] = -4
+  A[3] =  5
+  A[4] =  1
+  A[5] = -6
+  A[6] =  2
+  A[7] =  1
+P = 1 is an equilibrium index of this array, because:
+
+A[0] = −1 = A[2] + A[3] + A[4] + A[5] + A[6] + A[7]
+P = 3 is an equilibrium index of this array, because:
+
+A[0] + A[1] + A[2] = −2 = A[4] + A[5] + A[6] + A[7]
+P = 7 is also an equilibrium index, because:
+
+A[0] + A[1] + A[2] + A[3] + A[4] + A[5] + A[6] = 0
+and there are no elements with indices greater than 7.
+
+P = 8 is not an equilibrium index, because it does not fulfill the condition 0 ≤ P < N.
+
+Write a function:
+
+def solution(A)
+
+that, given an array A consisting of N integers, returns any of its equilibrium indices. The function should return −1 if no equilibrium index exists.
+
+For example, given array A shown above, the function may return 1, 3 or 7, as explained above.
+
+
+API Automation using JS Mocha chai
+https://www.youtube.com/watch?v=oW8uHfe8Jyk&list=PLmut16FIO_GUwbvR_NKwCWjA_awGmrxPP
+
+create RESTAPI using node js
+
+https://www.youtube.com/watch?v=0oXYLzuucwE&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q
+
+Java Collection Singleton;
+
+DatePicker Date Selection :
+
+https://www.swtestacademy.com/datepicker-using-selenium/
+ Methods 1: 
+    driver.get("https://www.flydubai.com/en/");
+  driver.findElement(By.id("departureDate")).click();
+ 
+    //Wait until departure table visible
+    wait.until(ExpectedConditions.visibilityOf(driver.findElements(By.cssSelector(".pika-table")).get(0)));
+ 
+    //Click departure day
+    driver.findElements(By.cssSelector
+            ("button[data-pika-year='2017'][data-pika-month='11'][data-pika-day='22']")).get(0).click();
+    //*****Departure day selection finished.
+ 
+    //*****Return day selection started
+    //Click Return Date
+    driver.findElement(By.id("return-date")).click();
+ 
+    //Wait until departure table visible
+    wait.until(ExpectedConditions.visibilityOf(driver.findElements(By.cssSelector(".pika-table")).get(1)));
+ 
+    //Click return day
+    driver.findElements(By.cssSelector
+            ("button[data-pika-year='2017'][data-pika-month='11'][data-pika-day='29']")).get(1).click();
+    //*****Return day selection finished.
+ 
+ 
+ Methods 2 : 
+  //Go to Trivago.com
+        driver.navigate().to("https://www.trivago.com.tr/");
+ //Select Start Date (First wait Visibility then click the start date)
+        wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.cssSelector(".cal-day.cal-is-weekend.cal-is-selectable.cal-is-range.cal-is-range-start,.cal-day.cal-is-selectable.cal-is-range.cal-is-range-start")));
+        driver.findElement
+                (By.cssSelector(".cal-day.cal-is-weekend.cal-is-selectable.cal-is-range.cal-is-range-start,.cal-day.cal-is-selectable.cal-is-range.cal-is-range-start")).click();
+ 
+ 
+        //Select End Date (First wait Visibility then click the end date)
+        wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.cssSelector(".cal-day.cal-is-weekend.cal-is-selectable.cal-is-range.cal-is-range-end,.cal-day.cal-is-selectable.cal-is-range.cal-is-range-end")));
+        driver.findElement
+                (By.cssSelector(".cal-day.cal-is-weekend.cal-is-selectable.cal-is-range.cal-is-range-end,.cal-day.cal-is-selectable.cal-is-range.cal-is-range-end")).click();
+				
+				
+		Excel Automation using Fillo
+https://codoid.com/fillo/
+Fillo fillo=new Fillo();
+Connection connection=fillo.getConnection("C:\\Test.xlsx");
+String strQuery="Select * from Sheet1 where ID=100 and name='John'";
+Recordset recordset=connection.executeQuery(strQuery);
+while(recordset.next()){
+System.out.println(recordset.getField("Details"));
+}
+recordset.close();
+connection.close();		
+ 
+ 
+ Pass Json as File into RESTAssured in BDD 
+ https://qaautomation.expert/2021/06/25/how-to-send-a-json-xml-file-as-payload-to-request-using-rest-assured/

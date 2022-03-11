@@ -27,7 +27,7 @@ private static class Node <T>{
 	}
 	
 	}//End of NODE class
-	public Node<T> head;
+	public Node<T> head=new Node(0);
 	public int size=0;
 	public void display(){
 			Node<T> current=(Node<T>) head;
@@ -60,14 +60,14 @@ private static class Node <T>{
 		
 		size++;
 			}
-	public void Insertatbeginning(T data){
+	public void Insertatbeginning(int data){
 		Node <T> newNode=new Node(data); 
 		newNode.next=head;
 		head=newNode;
 		size++;
 			}
 
-	public void InsertAtPosition(T data,int position){
+	public void InsertAtPosition(int data,int position){
 		Node <T> newNode=new Node(data);
 		Node <T> current=traverse(position);
 		newNode.next=current.next;
@@ -150,12 +150,12 @@ private static class Node <T>{
 	public static <T> void main(String[] args) {
 		
 		//Scanner sc=new Scanner(System.in);
-		singleLinkedList list=new singleLinkedList();
+		singleLinkedList<T> list=new singleLinkedList<T>();
 		list.searchElement(88);
-		list.head=new Node(0);
-//		Node<T> first=new  Node(0);
-//		Node<T> second=new  Node(1);
-//		Node<T> third=new  Node(2);
+		//list.head=new Node(0);
+		// Node<T> first=(Node<T>)new  Node(0);
+		// Node<T> second=new  Node(1);
+		// Node<T> third=new  Node(2);
 		for(int i=1;i<=3;i++)
 			list.Insertatbeginning(i);
 		
@@ -163,8 +163,7 @@ private static class Node <T>{
 		System.out.println("\nDelete Last node");
 		list.deleteLastNode();
 		list.display();
-		System.out.println("InsertAtbeginning");
-		list.InsertAtLast(3);
+		
 		list.removeDuplateFromSortedLL();
 		list.InsertAtPosition(77, 2);
 		System.out.println("\nInsertAtPosition");

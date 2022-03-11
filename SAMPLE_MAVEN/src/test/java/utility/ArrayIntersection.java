@@ -3,23 +3,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArrayIntersection {
     public static void main(String args[]) {
-        int myArray1[] = {23, 36, 96, 78, 55};
-        int myArray2[] = {78, 45, 19, 78, 55};
+        Integer myArray1[] = {23, 36, 96, 78, 55};
+        List<Integer> a1=Arrays.asList(myArray1);
+        Integer myArray2[] = {23, 46, 66, 78, 55};
+        List<Integer> a2=Arrays.asList(myArray2);
         System.out.println("Intersection of the two arrays ::");
-        List<int[]> a1=new ArrayList<>(Arrays.asList(myArray1));
-        List<int[]> a2=new ArrayList<>(Arrays.asList(myArray2));
-        a1.retainAll(a2);
-        Iterator<int[]> itr=a1.iterator();
+       // a1.retainAll(a2);
+        Iterator<Integer> itr=a1.iterator();
         while(itr.hasNext()){
            System.out.println(itr.next());}
-        
-        // String str="Java is program";
-        // String remove="apm";
-        // String result=str.replaceAll("a","").replaceAll("p", "").replaceAll("m", "");           
-        // System.out.println(result);
+        /**** Converting a Primitive 'int' Array to List **** using Java Stream **/
+        int intArray[] = {1, 2, 3, 4, 5};
+        List<Integer> integerList1 = Arrays.stream(intArray).boxed().collect(Collectors.toList());
+        System.out.println("List #1: " + integerList1);
      }
 
     

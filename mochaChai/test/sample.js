@@ -318,6 +318,24 @@ describe('Javascript example ', () => {
       };
       console.log(obj2.a,obj1.b);
 
+      //Delete operator
+      let person = {
+        firstName: "John",
+        lastName: "Doe",
+        phone: 12345
+    }
+  
+    let phone = person.phone;
+  
+    console.log(delete person.phone); //true
+    console.log(person); //12345
+    function f(){}
+    console.log("typeof undefined "+typeof(undefined));
+    console.log("typeof null "+typeof(null));
+    console.log("typeof NaN "+typeof(NaN));
+    console.log("typeof functions "+typeof(f));
+    console.log("typeof null "+typeof(null));
+
     });
     
 });

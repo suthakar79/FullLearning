@@ -7,14 +7,14 @@ class Alpha
     public String type = "a ";
     public Alpha() {  System.out.println("alpha "); }
     {System.out.println("instance initializer base class block invoked"); }
-    static {System.out.println("static block from Class Alpha derved"); }
+    static {System.out.println("static block from Base class"); }
 }
 public class interview extends Alpha
 {
     String type = "bus ";
     public interview()  {  System.out.println("beta ");  }
     static {
-        System.out.println("static block from Class Interview derved");
+        System.out.println("static block from Derived  class");
     }
     {System.out.println("instance initializer derived block invoked");} 
   

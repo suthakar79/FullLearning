@@ -1,0 +1,355 @@
+Java : https://www.javatpoint.com/java-tutorial     https://howtodoinjava.com/java/array/checking-arrays-are-equal/
+https://www.journaldev.com/1789/java-reflection-example-tutorial
+fillo API useing to read write : https://www.softwaretestinghelp.com/read-write-data-from-excel-sheet-in-selenium-web-driver/
+reading browser value from command line using 
+mvn test -Dbrowser=chrome
+String browser=System.getProperty("browser")
+https://seleniumjava.com/2017/05/21/how-to-run-scripts-in-a-specific-browser-with-maven/
+
+selenium : guru99
+C# :https://www.javatpoint.com/selenium-csharp
+protractor :https://chercher.tech/protractor/
+SQL:https://mode.com/sql-tutorial/  W3school SQL, https://www.softwaretestingmaterial.com/sql-interview-questions/
+Git : cheatsheet which is in Learning folder of Desktop
+Jenkins
+Jmeter: guru99
+postman : guru 99 and Postman officially guide
+RestAssured-Api Automation  : http://rest-assured.io/ and   https://www.james-willett.com/rest-assured-gpath-json  : JSON Max /Min /Find /Find All with examples
+JSON path examples :  https://goessner.net/articles/JsonPath/index.html#e2
+JSON path Evaltor :  https://jsonpath.com/
+JSON Schema Validator :  https://www.tutorialspoint.com/validate-json-schema-in-rest-assured
+JSON data sample : https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html
+JSON path finder : https://jsonpathfinder.com/
+$[?(@.starring[1]=='Eva Green')] ----> https://www.baeldung.com/guide-to-jayway-jsonpath
+$[?('Eva Green' in @['starring'])]  and this also works $[?('Eva Green' in @.starring)]
+$..['box office'].min()  _ all min ,max.sum ,lenght works fine provided it is array of values 
+$.max($..id) will reurn value :worked fine
+$[?(@.title=~ /Sky.*?/i)]-worked fine
+to get Latest name of title of the movie directed by Sam Mendes 
+1.First get latest releasedate directed by the Sam mendes
+Long Latest=JsonPath.parse(jsonString).read("$..[?(@.director== 'Sam Mendes')].['release date'].max()")
+2.apply this value in the below below JsonPath
+String title =JsonPath.parse(json).read("$[?(@.director    == 'Sam Mendes' && @['release date'] =="+Latest+")]".title")--Release date has space in Fieldname so used bracket notation-worked fine
+https://github.com/json-path/JsonPath  ( in , nin working ) with editor : http://jsonpath.herokuapp.com/?path=$..book.length()
+
+more info about altest addtion is here : https://github.com/json-path/JsonPath/issues/191
+
+ Pass Json as File into RESTAssured in BDD 
+ https://qaautomation.expert/2021/06/25/how-to-send-a-json-xml-file-as-payload-to-request-using-rest-assured/
+ 
+ Pass JSON file as payload
+
+Step 1 – Create a .json file and write payload in that. Keep the file in “src/test/resources” folder.
+
+Step 2 – Create a File in Java using “File” and pass to body() method.
+
+public class passJsonAsPayload {
+ 
+    ValidatableResponse validatableResponse;
+ 
+    @Test
+    public void createUser() {
+ 
+        // Creating a File instance
+        File jsonData = new File("src/test/resources/Payloads/jsondemo.json");
+ 
+        // GIVEN
+        given()
+               .baseUri("http://dummy.restapiexample.com/api")
+               .contentType(ContentType.JSON)
+               .body(jsonData)
+ 
+        // WHEN
+        .when()
+              .post("/v1/create")
+ 
+        // THEN
+        .then()
+               .assertThat()
+               .statusCode(200)
+               .body("data.name", equalTo("Json_Test"))
+               .body("message", equalTo("Successfully! Record has been added."))
+               .log().all();
+ 
+    }
+ 
+}
+ 
+ AWS Signature authentication :
+ https://stackoverflow.com/questions/51091916/restassured-authentication-with-aws-signature/51310019
+ 
+ Rest components
+ https://developer.cybersource.com/api/developer-guides/dita-gettingstarted/RESTComponents.html
+ 
+Manual testing -Smoke/sanity :https://www.janbasktraining.com/blog/smoke-vs-sanity-testing/
+Automation framework :softwaretestingmaterial.com/oops-concept-in-automation-framework/
+C# sharp: guru99
+Cucumber: https://www.tutorialspoint.com/cucumber/cucumber_quick_guide.htm
+Cucumber options: https://testingneeds.wordpress.com/tag/cucumberoptions/
+JavaScript-https://www.w3schools.com/js
+TestPlan:
+TDD and BDD difference( Test Driven Developement - Developement based on test featured created followed by dev and deve make the test to pass)
+
+axios  course : https://www.youtube.com/watch?v=6LyagkoRWYA
+axios document course :https://www.npmjs.com/package/axios#features
+
+https://www.careerjet.com/wsearch/jobs?s=visa+sponsorship+qa&l=USA&lid=55&cp=f&b=21  - PWC jobs founded Here with H1b Sponshorships
+Http Status Code : https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+FILLO API Overview
+https://www.softwaretestinghelp.com/read-write-data-from-excel-sheet-in-selenium-web-driver/
+Excel as database table 
+
+Node JS with building crud operations
+code : C:\Users\suthakar79\workspace\nodeJS_API_CRUD
+video : https://www.youtube.com/watch?v=pKd0Rpw7O48  ( Express.js Tutorial: Build RESTful APIs with Node and Express | Mocha)
+app.use(auth) (setting Auth for all operation ) 
+https://www.youtube.com/watch?v=vjf774RKrLc
+
+Binary Trees : https://www.youtube.com/watch?v=oSWTXtMglKE   ( HackerRank)
+Series : https://www.youtube.com/watch?v=IhJGJG-9Dx8&list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX
+Linked List,DoublyLinked list ,Tree : https://www.youtube.com/watch?v=jY-EUKXYT20  ()
+Series : https://www.youtube.com/watch?v=WI1qQavJIRo&list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d
+===================================================================================Cucumber JS=========================================================================
+Cucumber JS with Node js : https://www.youtube.com/watch?v=x4jP9ksCnMY
+===================================================================================CSV parse with Node js /protractor=========================================================================
+
+Pass CSV file using Papaparse
+const papa = require('papaparse');
+const fs = require('fs');
+const file = fs.readFileSync('D:Pathabc.csv', 'utf8');
+let results = papa.parse(file, {
+			header: true
+		});
+
+let rowcount=results.data.length;
+let colCount= results.meta.fields.length
+
+// Parse CSV string
+var data = Papa.parse(csv);
+
+// Convert back to CSV
+var csv = Papa.unparse(data);
+
+Referance : https://www.papaparse.com/#delimiter
+
+===================================================================================GraphQL=========================================================================
+GraphQL automation and concepts : https://www.youtube.com/watch?v=pkqBe4SduYk&list=PLFGoYjJG_fqpb54MHP9P7FDJV_jZvESwe&index=1  
+sample graphQL Api : https://hasura.io/learn/graphql/graphiql
+Docmentation: https://www.apollographql.com/docs/apollo-server/schema/schema/#the-schema-definition-language
+===================================================================================Jest unitesting framework=========================================================================
+Jest unitesting framework 
+1.basic : https://www.youtube.com/watch?v=FgnxcUQ5vho
+2. Mocking : https://www.softwaretestinghelp.com/testing-react-apps-using-jest/
+======================================================================================================================================================================================
+Node js - Connect DB 
+https://www.w3schools.com/nodejs/nodejs_mysql_create_db.asp
+
+online Sql editor
+https://www.mycompiler.io/new/sql
+
+find duplicate values of the table using SQL 
+
+selecr username,  email,count(*)  from emp group by username,email having count(*)>1
+
+find the odd /even no of records from student table
+select * from student where mod(studentID,2)=0
+
+===================================================================================================================================================
+JavScript coding interview question with resolved 
+https://www.fullstack.cafe/blog/javascript-code-interview-questions
+https://www.interviewbit.com/javascript-interview-questions/
+JavaScript: https://www.geeksforgeeks.org/objects-in-javascript/?ref=lbp
+javascript form validation : https://www.geeksforgeeks.org/form-validation-using-html-javascript/?ref=lbp
+javascript course : https://www.w3schools.com/js/js_typeof.asp
+===================================================================================================================================================
+how to detect name of thebrowser you are using
+<html>
+<head>
+	<title>Detect Browser in JavaScript</title>
+</head>
+
+<body>
+	<h1></h1>
+	<script>
+		var browserName = (function (agent) {
+        switch (true) {
+            case agent.indexOf("edge") > -1: return "MS Edge";
+            case agent.indexOf("edg/") > -1: return "Edge ( chromium based)";
+            case agent.indexOf("opr") > -1 && !!window.opr: return "Opera";
+            case agent.indexOf("chrome") > -1 && !!window.chrome: return "Chrome";
+            case agent.indexOf("trident") > -1: return "MS IE";
+            case agent.indexOf("firefox") > -1: return "Mozilla Firefox";
+            case agent.indexOf("safari") > -1: return "Safari";
+            default: return "other";
+        }
+    })(window.navigator.userAgent.toLowerCase());
+
+document.querySelector("h1").innerText="You are using "+ browserName +" browser";  
+	</script>
+</body>
+</html>
+
+Amex Screenning interview on feb 3 9AM to 10 AM ( one hour)
+cucumber : 
+
+1.How to pass value between step definition  Ans : using global variable in step definition file this keyword works  too
+2.What are the cucumber options available; plugin,DryRun,feature,glue,Monochrome, snipper=snipetType.UNDERELINE, sninnpetType.CamelCase,tags,strict
+3.Wat is monochrome do 
+4.what are the hooks available in Cucumber
+5.how are background and before hooks differ
+
+Java :
+what are the access modifier used in abstract class
+abstract can have constructor
+how to call abstrat class consturctor  : from deriver class using super we can call abstract class constructor.
+what is runtime polymorphism
+what are the advantage of using stringbuffer and string builder 
+what are the adavntage using map over set
+what is hashset
+Given string , print the number say extract first char if it is digit 8 then print 88888888(8 times) and 7 seven times etc if it is character is print it is character
+String s = "876879s43s8767v";
+
+API
+how to identify whether the api is SOAP/REST: Ans  If you have WSDL file it may be SOAP services and if you have Schema it shd be REST services
+
+Selenium
+: user click the button and downloaded the file . How to validate the content of the file using selenium
+what are the different method you try when click is not working
+how to write diff xpath to get count of laptops from amazon laptop page
+what are the partital match xpath options
+what are xpath options and what is diff between following and following::sibling
+why selenium thorws Nosuch element exception though objects are present 
+how to select checkbox based on the value provided in the amazon website
+
+=============================================================================================================================================================================================
+CBRE Screening interview on Feb 4 4.30 to 5 .00 PM 
+1. How to update multiple records in rest api For example if you have 10 student record in the api and i want to update all the records in api with single call .(put/patch)
+what is diff between json object and json array of objects
+2.what is diff between put and post
+3.what is diff between final and finally
+4.Can we have try within try block : ans yes
+5. can we have try without catch block Ans : no
+6.Can we have finally block 
+7.Selenium : I have radio button Male and Female and i have another two radio button (Asian and not asian) based on male button asian/not asian button will be disabled /enabled how to automate
+8.what are the access modifiers in java ( private,public and protected ,default) 
+9.Write jave program to find the position of number from the two dimensional matrix 
+1 2 3 0
+4 5 6 0
+7 8 9 0
+
+if i can give input as 5 then answers is 1,2  
+
+program:
+public class CBREjavaprogram
+{
+public static void main(String args[])
+{
+  int mat[][] ={  {1,2,3,0},
+                        {4,5,6,0},
+                        {7,8,9,0}
+                       };
+System.out.println("Enter the number to find position");
+Scanner sc=new Scanner(System.in);
+float input=sc.nextFloat();
+for(int i=0;i<3;i++)
+{
+ for(int j=0;j<4;j++)
+  {
+    if(input==mat[i][j])
+      System.out.println(" the position found at "+i+","+j+" for input "+input);
+	}//End of J 
+	}
+	
+}
+}
+==========================================================================================================================================================================================
+Dominos pizza client interview on 2/10/2022 time : 2 to 2.30 Video Interview
+1. Different wait in selenium
+2.what are the locators in selenium
+3.how to execute parallel
+4.what is maven
+5.What is 
+=============================================================================================================
+Mphasis
+1.Can we override static methods? No 
+Detailed explanation here : https://www.geeksforgeeks.org/can-we-overload-or-override-static-methods-in-java/
+No Static constructor allowd in java : https://www.javatpoint.com/java-static-constructor#:~:text=A%20static%20constructor%20is%20not,understand%20it%20with%20an%20example.
+super cannot be used inside static methd since super refers to base class object in which Static methos are not called with Objects
+this cannot be used inside static method  
+
+from main can't use super and this since main is static
+
+2.what are the oops concept and how are you implement in your selenium framework
+Webdriver =new chromedriver(); Webdriver =new Edgedriver()// runtime polymorphism implemented .As per Polymorphim object ref is decided at runtime and not with complile time
+
+how to run failed scenario only in TESTNG
+Ans :After the first run of an automated test run. Right click on Project – Click on Refresh
+A folder will be generated named “test-output” folder. Inside “test-output” folder, you could find “testng-failed.xml”
+Run “testng-failed.xml” to execute the failed test cases again.
+https://www.softwaretestingmaterial.com/run-failed-test-cases-using-testng/
+
+===============================================================================================================================================================
+
+ Load tests help you understand how a system behaves under an expected load. Stress tests help you understand the upper limits of a system's capacity using a load beyond the expected maximum.
+ 
+ Endurance testing keeps the application or system under load for a long duration to see how the app or system degrades over time
+ 
+ Spike testing is a type of performance testing in which an application receives a sudden and extreme increase or decrease in load. The goal of spike testing is to determine the behavior of a software application when it receives extreme variations in traffic.
+ 
+ Soap vs REST difference
+ https://www.guru99.com/comparison-between-web-services.html#:~:text=KEY%20DIFFERENCE,stands%20for%20Representational%20State%20Transfer.&text=SOAP%20needs%20more%20bandwidth%20for,%2C%20XML%2C%20HTML%20and%20JSON.
+ 
+ order of calling 
+ 
+ 1.Static Block 
+ 2.Base class constructor
+ 3.Instance initializer block 
+ 4.driver class constructor 
+ 
+ 
+ try block must have either catch or finally block to be followed otherwise java compiler will throw the error.
+
+https://www.codewars.com/kata/5526fc09a1bbd946250002dc/train/java
+
+handle SSL certifcate all browsers
+https://www.tutorialspoint.com/how-to-handle-ssl-certificate-error-using-selenium-webdriver
+https://www.tutorialspoint.com/how-to-click-allow-on-show-notifications-popup-using-selenium-webdriver  show notification popup 
+ChromeOptions p = new ChromeOptions();
+start-maximized: Opens Chrome in maximize mode
+incognito: Opens Chrome in incognito mode
+headless: Opens Chrome in headless mode
+disable-extensions: Disables existing extensions on Chrome browser
+disable-popup-blocking: Disables pop-ups displayed on Chrome browser
+make-default-browser: Makes Chrome default browser
+version: Prints chrome browser version
+disable-infobars: Prevents Chrome from displaying the notification ‘Chrome is being controlled by automated software
+
+collection methods : https://www.javatpoint.com/java-collections-class
+frequency " Collections.frequency(list,5);
+
+PDF Automation 
+
+
+online  code editors:
+1.JS : https://karatstudio.karat.io/interview/26f7ec1c-7c45-4e71-b025-fa9821f37f4f/candidate ( freedom financial test)
+
+closure and Higher orderfunctions:
+Higher-order functions are just a function returning a function, or that takes a function as an argument. Closures are used to preserve outer scope inside an inner scope.
+
+using Arrow Implementation :
+// Saving a function in a variable
+const myFirstFunc = () => 10
+// Passing a function as an argument
+const mySecondFunc = (funcParam) => { 
+  return console.log(funcParam())
+}
+// Returning a function from a function
+const myThirdFunc = () => {
+  return () => console.log('Hello from returned function')
+   
+}
+
+
+here all the functions are first  class functions and mySecondFunc & myThirdFunc are Higher order functions
+

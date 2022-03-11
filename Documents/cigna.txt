@@ -1,0 +1,179 @@
+Endpoint: cigna.com/v1/getUserDetails
+
+Get > No Auth in headers
+
+Check if API is UP
+
+String  Authtoken=given
+                        .contentType(ContentType.JSON)
+                       . baseURI("cigna.com")
+                        .body({'"username": "yogesh"}')
+                      .when
+                          .post("/getAuth")
+                      .then
+                          .assertThat()
+                          .statuscode(201)
+                       .extract
+                            .path("access_token");
+                            
+
+Response response=given
+                    .contentType(ContentType.JSON).
+                    baseURI("cigna.com").
+                    auth.oathu2(Authtoken).
+                  when
+                     .get("/v1/getUserDetails").
+                  then
+                      .assertThat()
+                      .statuscode(200)
+                      .statusLine('OK')
+                 extract
+                      . response();
+                      
+                      
+POST: cigna.com/getAuth
+Request Body: {"username": "yogesh"}
+
+                       
+Response Body:
+{
+    "access_token": "xyzSampleToken",
+    "token_type": "bearer"
+}
+
+
+// Selenium
+
+
+
+Double balance;
+
+Button: Click : Opens a new window
+
+Class verifyWindow
+{
+Public static void main(string ...u)
+{
+driver.get(url);
+driver.findElement(By.id("button").click();
+List<string> mainWindow=driver.getWindowHandles();
+for(String str: mainWindow)
+{
+driver.switchTo().window(str);
+Sting ChildWindow=driver.getWindowHanle()
+if( ChildWindow!=mainWindow)
+   if(driver.getTitle()=="new window")
+       Asser.assertTrue(true);
+       
+       
+       
+     {
+  "clients": {
+    "client": [
+      {
+        "id": "123",
+        "name": "John",
+        "startDate": "01-01-2020",
+        "endDate": "12-31-2020"
+      },
+      {
+        "id": "124",
+        "name": "Jane",
+        "startDate": "01-01-2022",
+        "endDate": "12-31-2022"
+      }
+    ]
+  }
+}
+
+
+UI: Label: UserStatus : Active/Termed
+
+
+>> John
+
+Termed
+
+Map<String,object> map=response.path(clients.client.find{it.name=='John'});
+String sdate=map.get(startDate);
+String edate=map.get(endDate);
+if (edate.getFullYear()>=2022)
+  System.out.Println(" Termed");
+
+
+
+
+
+-----------------------------------------
+
+public interface A {
+
+   void click();
+}
+
+public class B implements A {
+    void click() {Sysout("")}
+
+}
+
+A a1 = new A(); // Invalid
+A a2 = new B(); // Valid
+B b1 = new B(); // Valid
+
+-------------------------------------------------
+ 
+public abstract class A {
+
+    public A(int a) { // Valid
+    
+    
+    }
+
+} 
+       
+       
+public class B extends A {
+
+    public B(int x)
+    {
+      super(x);
+      }
+
+}       
+
+------------------------------------------------------------
+
+try{
+    driver.findElement(By.id("invalid"))
+
+} catch(Exception e) {
+Sysout("Exception")
+
+} catch(NoSuchElementException nse) {
+Sysout("NoSuchElementException")
+}
+
+
+Corrected ->
+
+try{
+    driver.findElement(By.id("invalid"))
+
+} catch(NoSuchElementException nse) {
+Sysout("NoSuchElementException")
+}
+catch(Exception e) {
+Sysout("Exception")
+
+}
+----------------------------------------------------------
+
+String s1 = "Ravi";
+String s2 = new String("Ravi");
+String s3 = "Ravi";
+
+s1 == s2.       // false
+s1.equals(s2);  // true    
+s1 == s3.       // true
+
+         

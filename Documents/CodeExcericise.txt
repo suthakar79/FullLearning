@@ -1,0 +1,133 @@
+finding length of the small word from the sentence 
+const s="sds fsdsf fsdfsd gsdds gsdgsdgdsg gfdfgd";
+function findShort(s){
+  return Math.min.apply(null, s.split(' ').map(w => w.length));
+}
+
+or 
+
+function findShort(s){
+    return Math.min(...s.split(" ").map (s => s.length));
+}
+
+	public class DuplicateEncoder {
+	static String encode(String word){
+//     word=word.toLowerCase();
+    char [] xh=word.toCharArray();
+    for(char x: xh){
+     char x1=Character.toLowerCase(x);
+      long count = word.chars().filter(ch -> ch == x1).count();
+      System.out.println(x+" occurs "+count);
+      if(count>1) 
+        word=word.replaceAll(String.valueOf(x),")");
+      else if(count==1)
+       word=word.replace(String.valueOf(x),"(");
+
+    }
+    
+    return word;
+}
+}																															   
+													  
+3. Kata.createPhoneNumber(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}) // => returns "(123) 456-7890"
+Ans : 											  
+									   
+public static String createPhoneNumber(int[] numbers) {
+    return String.format("(%d%d%d) %d%d%d-%d%d%d%d",numbers[0],numbers[1],numbers[2],numbers[3],numbers[4],numbers[5],numbers[6],numbers[7],numbers[8],numbers[9]);
+  }																	  
+				  
+public static String createPhoneNumber(int[] numbers) {
+    String phoneNumber = new String("(xxx) xxx-xxxx");
+    
+    for (int i : numbers) {
+      phoneNumber = phoneNumber.replaceFirst("x", Integer.toString(i));
+    }
+    
+    return phoneNumber;
+  }		
+
+My own example:
+
+For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+Ans :   public int squareDigits(int n) {
+    String x=String.valueOf(n);
+    String result="";
+    char [] num=x.toCharArray();
+    for(char c:num){
+      int r=Character.getNumericValue(c);
+      result=result+String.valueOf(r*r);
+    }
+    return Integer.parseInt(result);
+  }
+
+verify the number is Persist or not 
+39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+4 --> 0 (because 4 is already a one-digit number)
+
+class Persist {
+  public static int persistence(long n) {
+    long m = 1, r = n;
+
+    if (r / 10 == 0)
+      return 0;
+
+    for (r = n; r != 0; r /= 10)
+      m *= r % 10;
+
+    return persistence(m) + 1;
+    
+  }
+}																	 
+	
+
+verify the whether we have matched braces 
+
+public class BraceChecker {
+
+  public boolean isValid(String braces) { 
+    String b = braces;
+    System.out.println(braces);   
+    for(int i=0;i<braces.length()/2;i++)
+    {
+      b = b.replaceAll("\\(\\)", "");
+      b = b.replaceAll("\\[\\]", "");
+      b = b.replaceAll("\\{\\}", "");
+      if(b.length() == 0)
+        return true;
+    }
+    return false;
+  }
+}	
+
+[2, 4, 0, 100, 4, 11, 2602, 36]
+Should return: 11 (the only odd number)
+
+[160, 3, 1719, 19, 11, 13, -21]
+Should return: 160 (the only even number)	
+
+public class FindOutlier{
+  static int find(int[] integers){
+    int len=integers.length;
+    int Ecount=0; 
+    int even=0;
+    int ocount=0,odd=0;
+    for(int i:integers){
+      if(i%2 ==0) Ecount++; else even=i;
+      if(i%2 !=0) ocount++; else odd=i;
+      
+    }
+    if(Ecount==len-1) return even;
+    if(ocount==len-1) return odd;
+  return -1;    
+}
+}
+														  
+																		   
+																	
+																																										   
+			  
+																																															
+																				
+																																				   
+																																											 

@@ -1,0 +1,186 @@
+
+https://codeshare.io/6pDW8O
+
+class TestApp {
+    public static void main(String[] args) {
+        int odd = 1;
+        if (odd) {
+            System.out.println("odd");
+        } else {
+            System.out.println("even");
+        }
+    }
+}
+
+//even wrong Error is answers
+
+
+class TestApp {
+    static int index = 0;
+    public static void main(String args[]) {
+        System.out.println(test());
+    }
+    int test() {
+        int index = 1;
+        return index;
+    }
+}
+
+//error 
+
+
+class Alpha
+{
+    public String type = "a ";
+    public Alpha() {  System.out.print("alpha "); }
+}
+  
+public class Beta extends Alpha
+{
+    public Beta()  {  System.out.print("beta ");  }
+  
+    void go()
+    {
+        type = "b ";
+        System.out.print(this.type + super.type);
+    }
+  
+    public static void main(String[] args)
+    {
+        new Beta().go();
+    }
+}
+
+//alpha beta b a
+
+int[] a = {1,2,3,4,5,1,2,1}
+
+int[] out = {1,2}  //only repeated number
+
+Class printrepeat{
+  public static void main(String []args){
+    int[] a = {1,2,3,4,5,1,2,1};
+    int []frequency=new int[a.length];
+    for(int i=0;i<a.lenght;i++)
+    {
+      int count=1;
+      for(int j=i+1;j<a.length;j++)
+      {
+        if(a[i]==a[j])
+        {
+          count++;
+          frequency[j]=-1; 
+        }// end of if
+      }// End of J Loop
+      
+      if(count>1)
+        frequency[i]=a[i];
+    }// end of i loop
+    
+    for(int k=0;k<frequency.length;k++)
+    {
+      if(frequency[k)!=-1)
+        System.out.println(frequency[k]);
+    }
+      
+  }
+}
+
+
+//BDD
+
+                   getBalance?acNo=
+                   
+                   res:
+                   balance
+                   ac type:
+                   customer name:
+                   
+           
+                   
+                   Feature : validate the getbalance Get Call 
+                   
+                   @smoke
+                   Scenario outline: Validate response of the getbalenace api call
+                   Given I Pass "<headerInfo>" into the GetbalanApi Call
+                   | Accept : Content_Type |
+                   |Authorization : Bearer hjdsajkdajahasahjka|
+                   When I send the Get call to the "<APIURL>" for the "<accno>"
+                   Then I Validate the response have the values "<balance>" "<actype>" "<customername>"
+                   And also I validate the "<Responsecode>" of the Get Call
+                   
+                   Examples:
+                   |APIURL		|Responsecode			| balance		|	actype	|customername	| accno|
+                   |https://bank.getBalance?acNo=| 5000| Checkings| Ravi| 4567890012 |
+                   |https://bank.getBalance?acNo=| 5000| Saving | Ravi| 4567890013 |
+                   |https://bank.getBalance?acNo=| 5000| Deposit| Ravi| 4567890014 |
+                   
+                   
+                  
+                   
+                   public class validategetbalAPi{
+                     
+                     Response response;
+                     @before()
+                     {
+                       
+                     }
+                     
+                     public Given_I_ Pass_ "<>"_into_ the_GetbalanApi_Call(Datatable headedinfo){
+                       list<list<String>> data=headedinfo.raw
+                         
+                         RestAssured.auth.outh2(data.get(2).get(2))
+                        
+                     }
+                     publci I_send_ the_ Get_ call_ to_the "String xAPIURL>" for the "<accno>"(string apiurl,int accno){
+                      response= given
+                         .pathparams("accno",accno)
+                       .when
+                         .get(apiurl\{accno})
+                         
+                        .then
+                           .extract()
+                         		.response.
+                     }
+                    public  Then I Validate the response have the values "<balance>" "<actype>" "<customername>"(String bal,String actype,String custname){
+                      if(response.path("$.balance").equalsIgnoreCase(bal) && response.path("$.ac typ").equalsIgnoreCase(actype) && response.path("$. customer name").equalsIgnoreCase(custname){
+                        System.out.println(" Expected response are received ")
+                      else 
+                        System.out.println(" Expected response are not received ")
+                      }
+                         
+                     
+                     public And_also_I_validate_the "<Responsecode>" of the Get Call(String rescode)    {
+                       
+                       If(response.sta)
+                     }
+                    }
+                   }
+                   
+                         
+                         
+                         
+                         
+                         
+                         class accessdevelopersmenu{
+                           
+                           pulblic static void main(string args[]){
+                             
+                             System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
+                             Webdriver driver=
+                               
+                             webelemet developers=driver.findelement(By.xpath (//*[@id="navbar"]/ul/li[2]/a));
+                               Actions action =new Actions(driver);
+                               actions.movemouseover(developers).build.perform();
+                               //*[@id="navbar"]/ul/li[2]/div/ul/li[1]/a
+                               List<webelments> menusubmenuItems=driver.findElements(By.xapth("//div[class='drowndown']/ui/li"))
+                               for(link :menusubmenuItems ){
+                                 System.out.println(link.findElements(By.tagname('a').getvalue();))
+                               }
+                               
+                           }
+                         }
+                   
+                         	
+                   
+

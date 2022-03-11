@@ -1,5 +1,7 @@
 package utility;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +14,7 @@ public class removeDuplicate {
 	        int j=0;
 	        Set<Integer> duplicateElement=new HashSet<Integer>();
 	        Arrays.sort(arr);
-	       
+			
 	        System.out.println("Duplicate elements in given array: ");  
 	        //Searches for duplicate element  O(n)
 	       
@@ -24,12 +26,25 @@ public class removeDuplicate {
 	                	duplicateElement.add(arr[i+1]);	
 	            }  
 	            arr[j++]=arr[arr.length-1];
-	            for(int i=0;i<j;i++)
-	              System.out.println(arr[i]);
-	            System.out.println("Duplicate Elements are : "+duplicateElement);
-	                
 	            
-	         
-	    }  
+	            System.out.println("Duplicate Elements removed using for loop  : "+duplicateElement);
+
+		
+		  } 
+
+		  //substract a array from b 
+
+		  public static int[] arrayDiff(int[] a, int[] b) 
+		  {
+			List <Integer> list = new ArrayList<Integer>();
+			loop:
+			for (int num : a) {
+				for (int i : b) if (num == i) continue loop;
+				list.add(num);
+			}
+			return list.stream().mapToInt(Integer::intValue).toArray();
+			
+			//listA.stream().mapToInt(e -> e).toArray();
+		  }
 
 }
